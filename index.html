@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Путешествие — лето в Европе без лишних ожиданий</title>
+<meta name="description" content="Подберите лучшие даты летнего отпуска в Европе: погода, праздники и каникулы, перелёты с короткими пересадками и трансфер из аэропорта.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Путешествие — спланируйте лето в Европе">
+<meta property="og:description" content="Погода, сезонность, стыковки и трансфер — и итоговая рекомендация лучшего окна для поездки.">
+<meta name="theme-color" content="#40C9C0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0FBFA; --card:#FFFFFF; --accent:#40C9C0; --accent-h:#2BA59D; --soft:#C8F0EC;
+  --text:#1F3D3B; --muted:#5E7C7A; --sun:#FFD58A; --warn:#FF8A7A; --ok:#7ED9A6;
+  --line:#DDF3F1; --shadow:0 6px 24px rgba(31,61,59,.08); --shadow-pop:0 14px 40px rgba(31,61,59,.16);
+  --r:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 Nunito,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,40px);font-weight:800}
+h2{font-size:clamp(22px,3.4vw,28px);font-weight:800}
+h3{font-size:18px;font-weight:700}
+a{color:var(--accent-h)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent-h);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+header.top{padding:18px 0}
+header.top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;font-size:22px}
+.slogan{color:var(--muted);font-size:15px;flex:1;min-width:200px}
+.seg{display:inline-flex;background:var(--card);border-radius:999px;padding:4px;box-shadow:var(--shadow)}
+.seg button{border:0;background:none;border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:700;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--soft);color:var(--text)}
+
+.offline{background:var(--warn);color:var(--text);text-align:center;padding:8px 16px;font-weight:700}
+
+/* hero */
+.hero{padding:8px 0 32px}
+.hero-top{display:flex;align-items:center;gap:24px;margin-bottom:22px}
+.hero-top p{color:var(--text);opacity:.85;margin:10px 0 0;max-width:640px}
+.hero-art{flex:none;width:220px}
+@media (max-width:700px){.hero-art{display:none}}
+
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:20px}
+.form-card{padding:20px}
+.fields{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:768px){.fields{grid-template-columns:1fr 1fr}}
+@media (min-width:1200px){.fields{grid-template-columns:1.25fr 1.1fr 1.05fr 1.45fr .8fr .95fr}}
+.field{position:relative;min-width:0}
+.field>label,.field>.lbl{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:0 0 6px 4px}
+.control{width:100%;min-height:54px;display:flex;align-items:center;gap:8px;text-align:left;background:var(--card);border:1.5px solid var(--soft);border-radius:var(--r);padding:10px 14px;cursor:pointer;transition:border-color .15s}
+.control:hover:not(:disabled){border-color:var(--accent)}
+.control[aria-expanded="true"]{border-color:var(--accent-h)}
+.control:disabled{cursor:not-allowed;background:#F7FCFC;opacity:.7}
+.control .val{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.control .ph{color:var(--muted);font-weight:400}
+.control .chev{flex:none;transition:transform .15s}
+.control[aria-expanded="true"] .chev{transform:rotate(180deg)}
+
+.pop{position:absolute;top:calc(100% + 6px);left:0;min-width:100%;z-index:40;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow-pop);padding:8px}
+.pop:not([hidden]){animation:popIn .18s ease}
+@keyframes popIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.pop input[type=search]{width:100%;border:1.5px solid var(--soft);border-radius:12px;padding:10px 12px;font:inherit;margin-bottom:6px;outline:none}
+.pop input[type=search]:focus{border-color:var(--accent-h)}
+[role=listbox]{list-style:none;margin:0;padding:0;max-height:280px;overflow:auto;outline:none}
+[role=option]{padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:8px}
+[role=option].active{background:var(--soft)}
+[role=option][aria-selected="true"]{font-weight:800}
+[role=option] small{color:var(--muted);font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.flag{width:20px;height:15px;border-radius:3px;object-fit:cover;vertical-align:-2px;box-shadow:0 0 0 1px rgba(31,61,59,.12);flex:none}
+li.empty{padding:10px 12px;color:var(--muted)}
+.iata{font-size:12px;font-weight:800;background:var(--bg);color:var(--accent-h);padding:1px 7px;border-radius:999px;margin-left:auto}
+
+/* calendar */
+.cal-pop{width:min(760px,calc(100vw - 32px));padding:16px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.cal-hint{color:var(--muted);font-size:14px}
+.cal-months{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:640px){.cal-months{grid-template-columns:repeat(3,1fr)}}
+.cal-m h4{margin:0 0 6px;font-size:15px;text-align:center}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-g .wd{font-size:11px;color:var(--muted);text-align:center;padding:2px 0;font-weight:700}
+.day{border:0;background:none;border-radius:10px;height:34px;cursor:pointer;font-weight:600;font-size:14px}
+.day:hover:not(:disabled){background:var(--soft)}
+.day:disabled{color:#B5C9C7;cursor:default;font-weight:400}
+.day.inr{background:var(--soft);border-radius:0}
+.day.edge{background:var(--accent);color:var(--text);border-radius:10px;font-weight:800}
+.day.today{box-shadow:inset 0 0 0 1.5px var(--accent)}
+
+/* pax */
+.pax-pop{width:280px;padding:14px}
+.pax-row{display:flex;align-items:center;justify-content:space-between;padding:8px 4px}
+.pax-row small{display:block;color:var(--muted)}
+.cnt{display:flex;align-items:center;gap:10px}
+.cnt button{width:36px;height:36px;border-radius:999px;border:1.5px solid var(--accent);background:var(--card);cursor:pointer;font-size:20px;line-height:1;font-weight:700}
+.cnt button:disabled{border-color:var(--soft);color:#B5C9C7;cursor:default}
+.cnt output{min-width:18px;text-align:center;font-weight:800}
+
+/* priority */
+.prio{margin-top:16px;display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;border:0;padding:0}
+.prio legend{font-size:13px;font-weight:700;color:var(--muted);float:left;margin-right:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips span{display:inline-block;padding:8px 16px;border-radius:999px;border:1.5px solid var(--soft);background:var(--card);font-weight:700;font-size:14px;transition:.15s}
+.chips input:checked+span{background:var(--soft);border-color:var(--accent)}
+.chips input:focus-visible+span{outline:3px solid var(--accent-h);outline-offset:2px}
+
+.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:0;border-radius:999px;padding:13px 26px;font-weight:800;cursor:pointer;transition:background .15s,transform .1s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:var(--text)}
+.btn-primary:hover:not(:disabled){background:var(--accent-h);color:#fff}
+.btn-primary:disabled{background:var(--soft);color:var(--muted);cursor:not-allowed}
+.btn-ghost{background:var(--card);border:1.5px solid var(--accent);color:var(--text);padding:11.5px 22px}
+.btn-ghost:hover{background:var(--soft)}
+.btn-link{background:none;color:var(--muted);padding:12px 10px;text-decoration:underline}
+.btn-sm{padding:8px 16px;font-size:14px}
+.form-hint{color:var(--muted);font-size:14px}
+
+/* results */
+#results{padding-bottom:40px}
+section.block{scroll-margin-top:16px}
+.block-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.block-head .ico{width:40px;height:40px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:20px;flex:none}
+.badge{display:inline-block;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--text)}
+.badge.sun{background:var(--sun)}
+.badge.warn{background:var(--warn)}
+.badge.ok{background:var(--ok)}
+.note{color:var(--muted);font-size:14px;margin:6px 0 0}
+.grid2{display:grid;gap:20px;margin-top:20px}
+@media (min-width:1200px){.grid2{grid-template-columns:1fr 1fr}}
+
+.rec-cards{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:768px){.rec-cards{grid-template-columns:repeat(3,1fr)}}
+.rec{border:2px solid transparent;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+.rec:hover{transform:translateY(-2px)}
+.rec[aria-pressed="true"]{border-color:var(--accent);background:linear-gradient(180deg,#FFFDF6,#fff)}
+.rec .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rec .dates{font-weight:800;font-size:19px}
+.rec .rank{font-size:13px;color:var(--muted);font-weight:700}
+.score{width:58px;height:58px;border-radius:999px;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+.score small{display:block;font-size:10px;font-weight:700;line-height:1;margin-top:-6px}
+.rec p{margin:0;color:var(--text);font-size:15px}
+.bars{display:grid;gap:4px;margin-top:4px}
+.bar{display:grid;grid-template-columns:128px 1fr 30px;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.bar i{display:block;height:6px;border-radius:9px;background:var(--soft);overflow:hidden}
+.bar i b{display:block;height:100%;background:var(--accent);border-radius:9px}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+@media (min-width:560px){.stats{grid-template-columns:repeat(3,1fr)}}
+.stat{background:var(--bg);border-radius:12px;padding:10px 12px}
+.stat .k{font-size:12px;color:var(--muted);font-weight:700}
+.stat .v{font-size:20px;font-weight:800}
+.stat .v small{font-size:13px;font-weight:600;color:var(--muted)}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:11px;height:11px;border-radius:99px;display:inline-block}
+
+/* season */
+.scal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.scal h4{margin:0 0 4px;font-size:14px;text-align:center}
+.sg{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.sg .wd{font-size:10px;text-align:center;color:var(--muted);font-weight:700}
+.sd{height:28px;border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:600;position:relative;color:#9AB3B1}
+.sd.inr{color:var(--text);background:#F6FCFC}
+.sd.sch{background:var(--soft)}
+.sd.hol{background:var(--sun)}
+.sd.win{box-shadow:inset 0 0 0 2px var(--accent-h)}
+.weeks{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.wk{font-size:13px;padding:6px 10px;border-radius:10px;background:var(--bg);font-weight:600}
+.wk b{font-weight:800}
+.wk.low b{color:#2E7D55}.wk.mid b{color:#8A5A00}.wk.high b{color:#B23B2C}
+.hlist{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.hlist li{background:var(--bg);border-radius:12px;padding:8px 12px;font-size:14px}
+.hlist li b{font-weight:800}
+.hlist .sub{color:var(--muted)}
+
+/* flights */
+.ftools{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:12px}
+.ftools label{font-size:14px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.ftools select{font:inherit;border:1.5px solid var(--soft);border-radius:10px;padding:4px 8px;background:#fff}
+.ftools input[type=checkbox]{accent-color:var(--accent-h);width:17px;height:17px}
+.offer{border:1.5px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.offer .ohead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.offer .price{font-size:22px;font-weight:800}
+.leg{margin-top:10px;font-size:14px}
+.leg .lt{font-weight:800;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:4px}
+.route .ap{font-weight:800}
+.route .lay{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--bg)}
+.route .lay.risk{background:var(--warn)}
+.route .lay.long{background:var(--sun)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
+/* transfer */
+.tr{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:12px;border-radius:14px;border:1.5px solid var(--line);margin-bottom:8px}
+.tr .ti{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:22px}
+.tr .tn{font-weight:800}
+.tr .tm{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted);margin-top:2px}
+.tr.open{border-color:var(--ok);background:#F5FDF8}
+.tr.closed{opacity:.6}
+.arr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;font-size:14px}
+.arr input{font:inherit;border:1.5px solid var(--soft);border-radius:10px;padding:5px 8px}
+
+/* states */
+.sk{border-radius:12px;background:linear-gradient(90deg,#EAF7F6 25%,#F6FCFC 50%,#EAF7F6 75%);background-size:200% 100%;animation:sh 1.2s infinite;height:16px;margin:10px 0}
+@keyframes sh{to{background-position:-200% 0}}
+.err{background:#FFF3F1;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.info{background:var(--bg);border-radius:12px;padding:14px;font-size:15px}
+
+footer{background:var(--card);margin-top:20px;padding:28px 0 36px;font-size:14px;color:var(--muted)}
+footer h3{color:var(--text);margin-bottom:8px}
+footer ul{margin:0;padding-left:18px;columns:2;column-gap:28px}
+@media (max-width:600px){footer ul{columns:1}}
+footer li{margin-bottom:4px}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;z-index:99;box-shadow:var(--shadow-pop)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="offline" id="offline" role="status" hidden>Нет подключения к интернету — данные не обновятся, пока связь не восстановится.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Путешествие — на главную">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#C8F0EC"/><circle cx="26" cy="14" r="6" fill="#FFD58A"/><path d="M8 25l9-3 7-9 3 1-4 8 7-2 2-3 2 1-2 5-15 5-9-1z" fill="#2BA59D"/></svg>
+      Путешествие
+    </a>
+    <span class="slogan">Спланируйте лето в Европе без лишних ожиданий</span>
+    <div class="seg" role="group" aria-label="Валюта цен">
+      <button type="button" data-cur="RUB" aria-pressed="true">₽</button>
+      <button type="button" data-cur="EUR" aria-pressed="false">€</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <h1>Когда лучше ехать в Европу этим летом?</h1>
+        <p>Выберите, откуда и куда летите, и примерные даты. Мы сверим погоду, праздники, школьные каникулы, стыковки и трансфер — и подскажем лучшее окно для отпуска.</p>
+      </div>
+      <svg class="hero-art" viewBox="0 0 220 150" aria-hidden="true">
+        <circle cx="160" cy="44" r="28" fill="#FFD58A"/>
+        <g stroke="#FFD58A" stroke-width="4" stroke-linecap="round"><path d="M160 6v-0M160 4v6M198 44h6M116 44h6M187 17l4-4M129 75l4-4M187 71l4 4"/></g>
+        <path d="M18 70c18-10 40-18 64-14" stroke="#C8F0EC" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+        <path d="M78 52l22-6 16-20 7 2-8 17 17-4 5-7 5 2-5 11-35 11-23-2z" fill="#2BA59D"/>
+        <rect x="30" y="92" width="52" height="40" rx="9" fill="#40C9C0"/><rect x="44" y="84" width="24" height="10" rx="4" fill="none" stroke="#2BA59D" stroke-width="4"/>
+        <rect x="30" y="106" width="52" height="6" fill="#C8F0EC"/>
+        <path d="M100 130c12-8 24-8 36 0s24 8 36 0 24-8 36 0" stroke="#40C9C0" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M112 142c12-8 24-8 36 0s24 8 36 0" stroke="#C8F0EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <form class="card form-card" id="tripForm" novalidate>
+      <div class="fields">
+        <div class="field" id="f-from">
+          <span class="lbl" id="l-from">Откуда летите</span>
+          <button type="button" class="control" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="l-from v-from"><span class="val" id="v-from"></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+          <div class="pop" hidden><input type="search" placeholder="Город или код аэропорта" aria-label="Поиск города вылета" autocomplete="off"><ul role="listbox" aria-labelledby="l-from"></ul></div>
+        </div>
+        <div class="field" id="f-country">
+          <span class="lbl" id="l-country">Страна</span>
+          <button type="button" class="control" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="l-country v-country"><span class="val" id="v-country"></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+          <div class="pop" hidden><input type="search" placeholder="Поиск страны" aria-label="Поиск страны" autocomplete="off"><ul role="listbox" aria-labelledby="l-country"></ul></div>
+        </div>
+        <div class="field" id="f-city">
+          <span class="lbl" id="l-city">Город</span>
+          <button type="button" class="control" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="l-city v-city" disabled><span class="val" id="v-city"></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+          <div class="pop" hidden><ul role="listbox" aria-labelledby="l-city" tabindex="0"></ul></div>
+        </div>
+        <div class="field" id="f-dates">
+          <span class="lbl" id="l-dates">Даты: с — по</span>
+          <button type="button" class="control" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="l-dates v-dates"><span class="val" id="v-dates"></span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="3.5" width="14" height="12.5" rx="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M2 7.5h14M6 2v3M12 2v3" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="pop cal-pop" role="dialog" aria-label="Выбор дат поездки" hidden></div>
+        </div>
+        <div class="field" id="f-len">
+          <span class="lbl" id="l-len">Длительность</span>
+          <button type="button" class="control" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="l-len v-len"><span class="val" id="v-len"></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+          <div class="pop" hidden><ul role="listbox" aria-labelledby="l-len" tabindex="0"></ul></div>
+        </div>
+        <div class="field" id="f-pax">
+          <span class="lbl" id="l-pax">Пассажиры</span>
+          <button type="button" class="control" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="l-pax v-pax"><span class="val" id="v-pax"></span><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+          <div class="pop pax-pop" role="dialog" aria-label="Пассажиры" hidden>
+            <div class="pax-row"><div>Взрослые<small>от 12 лет</small></div><div class="cnt"><button type="button" data-pax="adults" data-d="-1" aria-label="Меньше взрослых">−</button><output id="o-adults" aria-live="polite">1</output><button type="button" data-pax="adults" data-d="1" aria-label="Больше взрослых">+</button></div></div>
+            <div class="pax-row"><div>Дети<small>до 12 лет</small></div><div class="cnt"><button type="button" data-pax="children" data-d="-1" aria-label="Меньше детей">−</button><output id="o-children" aria-live="polite">0</output><button type="button" data-pax="children" data-d="1" aria-label="Больше детей">+</button></div></div>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="prio">
+        <legend>Что важнее всего:</legend>
+        <div class="chips">
+          <label><input type="radio" name="prio" value="balance" checked><span>⚖️ Баланс</span></label>
+          <label><input type="radio" name="prio" value="weather"><span>☀️ Погода</span></label>
+          <label><input type="radio" name="prio" value="layover"><span>✈️ Короткие пересадки</span></label>
+          <label><input type="radio" name="prio" value="crowd"><span>🌿 Меньше туристов</span></label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" id="go" disabled>Подобрать поездку</button>
+        <button type="button" class="btn btn-ghost" id="share">Поделиться</button>
+        <button type="button" class="btn btn-link" id="reset">Сбросить</button>
+        <span class="form-hint" id="formHint">Заполните город вылета, страну, город и даты</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div id="results" hidden>
+  <div class="wrap">
+    <section class="block" id="rec" aria-labelledby="h-rec">
+      <div class="block-head"><span class="ico" aria-hidden="true">🧳</span><h2 id="h-rec">Лучшие окна для поездки</h2></div>
+      <div id="recBody"></div>
+    </section>
+    <div class="grid2">
+      <section class="block card" id="weather" aria-labelledby="h-weather">
+        <div class="block-head"><span class="ico" aria-hidden="true">☀️</span><h2 id="h-weather">Погода</h2><span id="wKind"></span></div>
+        <div id="weatherBody"></div>
+      </section>
+      <section class="block card" id="season" aria-labelledby="h-season">
+        <div class="block-head"><span class="ico" aria-hidden="true">📅</span><h2 id="h-season">Сезонность</h2></div>
+        <div id="seasonBody"></div>
+      </section>
+      <section class="block card" id="flights" aria-labelledby="h-flights">
+        <div class="block-head"><span class="ico" aria-hidden="true">✈️</span><h2 id="h-flights">Перелёты и стыковки</h2></div>
+        <div id="flightsBody"></div>
+      </section>
+      <section class="block card" id="transfer" aria-labelledby="h-transfer">
+        <div class="block-head"><span class="ico" aria-hidden="true">🚆</span><h2 id="h-transfer">Трансфер в центр</h2></div>
+        <div id="transferBody"></div>
+      </section>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Откуда данные</h3>
+    <ul>
+      <li>Прогноз, климат, УФ и вода — <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0)</li>
+      <li>Государственные праздники — <a href="https://date.nager.at/" target="_blank" rel="noopener">Nager.Date</a></li>
+      <li>Школьные каникулы — <a href="https://www.openholidaysapi.org/" target="_blank" rel="noopener">OpenHolidays API</a></li>
+      <li>Страны, флаги, соседи — <a href="https://restcountries.com/" target="_blank" rel="noopener">REST Countries</a></li>
+      <li>Курс евро — <a href="https://www.cbr-xml-daily.ru/" target="_blank" rel="noopener">ЦБ РФ (cbr-xml-daily)</a>, запасной — <a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener">ExchangeRate-API</a></li>
+      <li>Аэропорты — справочник IATA-кодов на основе <a href="https://ourairports.com/data/" target="_blank" rel="noopener">OurAirports</a></li>
+      <li>Авиабилеты — партнёрский API продавца билетов через серверный прокси</li>
+      <li>Трансфер — справочник по официальным сайтам аэропортов</li>
+    </ul>
+    <p>Данные носят справочный характер. Климатическая норма — это среднее за прошлые годы, а не прогноз. Цены и расписания уточняйте у перевозчиков.</p>
+    <p>© Путешествие, 2026</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+'use strict';
+/* ================= Настройки =================
+   FLIGHTS_PROXY_URL — адрес serverless-прокси для поиска рейсов (раздел 8 PRD).
+   Ключ партнёра (Travelpayouts / Duffel / Amadeus) хранится только на прокси.
+   Запрос: GET {url}?origin=SVO&destination=BCN&depart=2027-06-15&return=2027-06-21&adults=2&children=1
+   Ответ:  { "offers": [ { "price": 45200, "currency": "RUB", "link": "https://...",
+             "outbound": [ {"from":"SVO","to":"IST","dep":"2027-06-15T08:10+03:00","arr":"2027-06-15T11:40+03:00","carrier":"TK","flight":"TK414"}, ... ],
+             "inbound":  [ ... ] } ] }
+   Пока адрес пуст, блок «Перелёты» показывает ссылки на поиск у партнёров на выбранные даты. */
+const CONFIG = { FLIGHTS_PROXY_URL: '' };
+
+/* ================= Справочники ================= */
+const DEPARTURES = [
+ ['SVO','Москва','Шереметьево'],['DME','Москва','Домодедово'],['VKO','Москва','Внуково'],['LED','Санкт-Петербург','Пулково'],
+ ['KZN','Казань','Казань'],['AER','Сочи','Сочи'],['SVX','Екатеринбург','Кольцово'],['OVB','Новосибирск','Толмачёво'],['KRR','Краснодар','Пашковский'],['MRV','Минеральные Воды','Минеральные Воды'],
+ ['ALA','Алматы','Алматы'],['NQZ','Астана','Нурсултан Назарбаев'],['CIT','Шымкент','Шымкент'],['GUW','Атырау','Атырау'],['SCO','Актау','Актау'],['AKX','Актобе','Актобе'],['KGF','Караганда','Сары-Арка'],['URA','Уральск','Ак Жол'],
+ ['TAS','Ташкент','Ислам Каримов'],['SKD','Самарканд','Самарканд'],['FRU','Бишкек','Манас'],['DYU','Душанбе','Душанбе'],['GYD','Баку','Гейдар Алиев'],['EVN','Ереван','Звартноц'],['TBS','Тбилиси','Тбилиси'],['MSQ','Минск','Минск'],
+ ['IST','Стамбул','Стамбул'],['SAW','Стамбул','Сабиха Гёкчен'],['AYT','Анталья','Анталья'],['DXB','Дубай','Дубай'],['AUH','Абу-Даби','Абу-Даби'],['DOH','Доха','Хамад'],['TLV','Тель-Авив','Бен-Гурион'],
+ ['RIX','Рига','Рига'],['VNO','Вильнюс','Вильнюс'],['TLL','Таллин','Таллин'],['HEL','Хельсинки','Вантаа'],['BEG','Белград','Никола Тесла'],['WAW','Варшава','Шопен'],['FRA','Франкфурт','Франкфурт'],['LHR','Лондон','Хитроу'],['CDG','Париж','Шарль-де-Голль'],['AMS','Амстердам','Схипхол'],
+ ['PEK','Пекин','Шоуду'],['PVG','Шанхай','Пудун'],['ICN','Сеул','Инчхон'],['DEL','Дели','Индира Ганди'],['BKK','Бангкок','Суварнабхуми'],['JFK','Нью-Йорк','Джон Кеннеди']
+];
+// [IATA, город, широта, долгота, у моря]
+const DEST = {
+ ES:[['BCN','Барселона',41.389,2.159,1],['MAD','Мадрид',40.417,-3.704,0],['AGP','Малага',36.721,-4.421,1],['PMI','Пальма-де-Майорка',39.570,2.650,1],['VLC','Валенсия',39.470,-0.376,1],['SVQ','Севилья',37.389,-5.984,0],['ALC','Аликанте',38.345,-0.481,1]],
+ IT:[['FCO','Рим',41.903,12.496,0],['MXP','Милан',45.464,9.190,0],['VCE','Венеция',45.440,12.316,1],['NAP','Неаполь',40.852,14.268,1],['FLR','Флоренция',43.770,11.256,0],['CTA','Катания',37.503,15.087,1],['BRI','Бари',41.117,16.872,1],['CAG','Кальяри',39.224,9.122,1]],
+ FR:[['CDG','Париж',48.857,2.352,0],['NCE','Ницца',43.710,7.262,1],['MRS','Марсель',43.297,5.370,1],['LYS','Лион',45.764,4.836,0],['BOD','Бордо',44.838,-0.579,0]],
+ DE:[['BER','Берлин',52.520,13.405,0],['MUC','Мюнхен',48.137,11.576,0],['FRA','Франкфурт',50.110,8.682,0],['HAM','Гамбург',53.551,9.994,0],['CGN','Кёльн',50.938,6.960,0]],
+ GR:[['ATH','Афины',37.984,23.728,1],['SKG','Салоники',40.640,22.944,1],['HER','Ираклион (Крит)',35.339,25.144,1],['RHO','Родос',36.434,28.217,1],['CFU','Корфу',39.624,19.921,1],['JTR','Санторини',36.417,25.432,1]],
+ PT:[['LIS','Лиссабон',38.722,-9.139,1],['OPO','Порту',41.158,-8.629,1],['FAO','Фару',37.019,-7.930,1],['FNC','Фуншал (Мадейра)',32.650,-16.908,1]],
+ NL:[['AMS','Амстердам',52.370,4.895,0],['EIN','Эйндховен',51.441,5.470,0]],
+ AT:[['VIE','Вена',48.208,16.373,0],['SZG','Зальцбург',47.809,13.055,0],['INN','Инсбрук',47.269,11.404,0]],
+ CZ:[['PRG','Прага',50.075,14.437,0],['BRQ','Брно',49.195,16.607,0]],
+ HR:[['DBV','Дубровник',42.650,18.094,1],['SPU','Сплит',43.508,16.440,1],['ZAG','Загреб',45.815,15.982,0],['PUY','Пула',44.866,13.850,1]],
+ ME:[['TIV','Тиват',42.430,18.699,1],['TGD','Подгорица',42.441,19.263,0]],
+ HU:[['BUD','Будапешт',47.498,19.040,0]],
+ PL:[['WAW','Варшава',52.230,21.012,0],['KRK','Краков',50.065,19.945,0],['GDN','Гданьск',54.352,18.646,1]],
+ CH:[['ZRH','Цюрих',47.377,8.541,0],['GVA','Женева',46.204,6.143,0]],
+ BE:[['BRU','Брюссель',50.850,4.352,0]],
+ DK:[['CPH','Копенгаген',55.676,12.568,1]],
+ SE:[['ARN','Стокгольм',59.329,18.069,1],['GOT','Гётеборг',57.709,11.975,1]],
+ NO:[['OSL','Осло',59.914,10.752,1],['BGO','Берген',60.391,5.322,1]],
+ FI:[['HEL','Хельсинки',60.170,24.938,1]],
+ IE:[['DUB','Дублин',53.350,-6.260,1]],
+ GB:[['LHR','Лондон',51.507,-0.128,0],['EDI','Эдинбург',55.953,-3.189,1]],
+ CY:[['LCA','Ларнака',34.917,33.630,1],['PFO','Пафос',34.776,32.424,1]],
+ MT:[['MLA','Валлетта',35.899,14.514,1]],
+ SI:[['LJU','Любляна',46.057,14.506,0]],
+ SK:[['BTS','Братислава',48.149,17.107,0]],
+ RS:[['BEG','Белград',44.787,20.457,0]],
+ BG:[['VAR','Варна',43.214,27.915,1],['BOJ','Бургас',42.505,27.463,1],['SOF','София',42.698,23.322,0]],
+ RO:[['OTP','Бухарест',44.427,26.103,0]],
+ EE:[['TLL','Таллин',59.437,24.754,1]],
+ LV:[['RIX','Рига',56.950,24.105,1]],
+ LT:[['VNO','Вильнюс',54.687,25.280,0]],
+ IS:[['KEF','Рейкьявик',64.147,-21.942,1]],
+ AL:[['TIA','Тирана',41.328,19.818,0]]
+};
+const COUNTRY_RU = {ES:'Испания',IT:'Италия',FR:'Франция',DE:'Германия',GR:'Греция',PT:'Португалия',NL:'Нидерланды',AT:'Австрия',CZ:'Чехия',HR:'Хорватия',ME:'Черногория',HU:'Венгрия',PL:'Польша',CH:'Швейцария',BE:'Бельгия',DK:'Дания',SE:'Швеция',NO:'Норвегия',FI:'Финляндия',IE:'Ирландия',GB:'Великобритания',CY:'Кипр',MT:'Мальта',SI:'Словения',SK:'Словакия',RS:'Сербия',BG:'Болгария',RO:'Румыния',EE:'Эстония',LV:'Латвия',LT:'Литва',IS:'Исландия',AL:'Албания',LU:'Люксембург',BA:'Босния и Герцеговина',MK:'Северная Македония',XK:'Косово',MD:'Молдова',UA:'Украина',BY:'Беларусь',RU:'Россия',AD:'Андорра',MC:'Монако',SM:'Сан-Марино',LI:'Лихтенштейн',VA:'Ватикан',TR:'Турция'};
+// Соседи — запасной вариант, если REST Countries недоступен
+const NEIGHBORS = {ES:['FR','PT','AD'],IT:['FR','CH','AT','SI'],FR:['ES','BE','DE','CH','IT','LU'],DE:['FR','NL','BE','AT','CH','CZ','PL','DK','LU'],GR:['AL','MK','BG'],PT:['ES'],NL:['DE','BE'],AT:['DE','CZ','SK','HU','SI','IT','CH','LI'],CZ:['DE','PL','SK','AT'],HR:['SI','HU','RS','BA','ME'],ME:['HR','BA','RS','AL'],HU:['AT','SK','RO','RS','HR','SI'],PL:['DE','CZ','SK','LT'],CH:['DE','FR','IT','AT','LI'],BE:['FR','LU','DE','NL'],DK:['DE'],SE:['NO','FI'],NO:['SE','FI'],FI:['SE','NO'],IE:['GB'],GB:['IE'],CY:[],MT:[],SI:['IT','AT','HU','HR'],SK:['CZ','PL','HU','AT'],RS:['HU','RO','BG','MK','ME','BA','HR'],BG:['RO','RS','MK','GR'],RO:['MD','HU','RS','BG'],EE:['LV'],LV:['EE','LT'],LT:['LV','PL'],IS:[],AL:['ME','MK','GR']};
+const SCHENGEN = new Set('AT BE BG CZ DK EE FI FR DE GR HU IS IT LV LI LT LU MT NL NO PL PT RO SK SI ES SE CH HR'.split(' '));
+const HUB_CC = {IST:'TR',SAW:'TR',AYT:'TR',DXB:'AE',AUH:'AE',DOH:'QA',TBS:'GE',EVN:'AM',GYD:'AZ',ALA:'KZ',NQZ:'KZ',TAS:'UZ',MSQ:'BY',SVO:'RU',DME:'RU',VKO:'RU',LED:'RU',TLV:'IL'};
+const MONTHS_GEN=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const MONTHS_SH=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+const MONTHS_NOM=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const WD=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+
+// Трансфер: [тип, название, мин в пути, € от, € до, частота, работает с, до | '24/7']. Ориентировочно, по сайтам аэропортов.
+const TRANSFERS = {
+ BCN:{site:'https://www.aena.es/',o:[['bus','Aerobús до пл. Каталонии',35,7,7.5,'каждые 5–10 мин','05:00','01:00'],['train','Поезд R2 Nord',25,5,5.5,'каждые 30 мин','05:40','23:40'],['metro','Метро L9 Sud',35,5.5,5.5,'каждые 7 мин','05:00','00:00'],['taxi','Такси',25,35,45,'по запросу','24/7']]},
+ MAD:{site:'https://www.aena.es/',o:[['metro','Метро линия 8',25,4.5,5,'каждые 5 мин','06:00','01:30'],['bus','Exprés Aeropuerto',40,5,5,'каждые 15–35 мин','24/7'],['train','Электричка Cercanías C1',25,2.6,3,'каждые 30 мин','06:00','23:30'],['taxi','Такси (фиксированный тариф)',30,33,33,'по запросу','24/7']]},
+ AGP:{site:'https://www.aena.es/',o:[['train','Электричка C1',12,1.8,2,'каждые 20 мин','07:00','23:30'],['bus','Автобус A Express',20,4,4,'каждые 25 мин','07:00','00:00'],['taxi','Такси',15,22,28,'по запросу','24/7']]},
+ PMI:{site:'https://www.aena.es/',o:[['bus','Автобус A1',20,5,5,'каждые 15 мин','06:00','01:00'],['taxi','Такси',15,20,30,'по запросу','24/7']]},
+ FCO:{site:'https://www.adr.it/',o:[['train','Leonardo Express до Термини',32,14,14,'каждые 15 мин','06:00','23:30'],['bus','Автобусы-шаттлы до Термини',55,6,8,'каждые 30 мин','05:00','00:30'],['taxi','Такси (фиксированный тариф)',45,55,55,'по запросу','24/7']]},
+ MXP:{site:'https://www.milanomalpensa-airport.com/',o:[['train','Malpensa Express',50,13,13,'каждые 30 мин','05:30','23:30'],['bus','Автобус до Центрального вокзала',55,10,10,'каждые 20 мин','05:00','01:00'],['taxi','Такси (фиксированный тариф)',50,104,104,'по запросу','24/7']]},
+ VCE:{site:'https://www.veniceairport.it/',o:[['bus','Автобус до пл. Рима',25,10,10,'каждые 30 мин','05:20','01:10'],['ferry','Водный автобус Alilaguna',75,15,15,'каждые 30–60 мин','06:00','23:00'],['taxi','Такси до пл. Рима',20,40,45,'по запросу','24/7']]},
+ NAP:{site:'https://www.aeroportodinapoli.it/',o:[['bus','Alibus',20,5,5,'каждые 20 мин','06:00','00:00'],['taxi','Такси (фиксированный тариф)',20,25,30,'по запросу','24/7']]},
+ CDG:{site:'https://www.parisaeroport.fr/',o:[['train','RER B',35,13,14,'каждые 10–15 мин','04:50','23:50'],['bus','Roissybus до Оперы',60,16,17,'каждые 15–20 мин','06:00','00:30'],['taxi','Такси (фиксированный тариф)',45,56,65,'по запросу','24/7']]},
+ NCE:{site:'https://www.nice.aeroport.fr/',o:[['metro','Трамвай T2',25,1.7,1.7,'каждые 8 мин','05:30','00:30'],['taxi','Такси',20,32,40,'по запросу','24/7']]},
+ BER:{site:'https://ber.berlin-airport.de/',o:[['train','FEX / RE до Hauptbahnhof',30,4.4,4.8,'каждые 15 мин','04:30','00:30'],['taxi','Такси',40,50,65,'по запросу','24/7']]},
+ MUC:{site:'https://www.munich-airport.de/',o:[['train','S-Bahn S1 / S8',40,13,14,'каждые 10 мин','04:00','01:30'],['bus','Lufthansa Express Bus',45,12,12,'каждые 15 мин','05:00','20:00'],['taxi','Такси',40,75,95,'по запросу','24/7']]},
+ FRA:{site:'https://www.frankfurt-airport.com/',o:[['train','S-Bahn S8 / S9',15,6,6.5,'каждые 15 мин','04:30','01:00'],['taxi','Такси',20,40,50,'по запросу','24/7']]},
+ ATH:{site:'https://www.aia.gr/',o:[['metro','Метро, линия 3',40,9,9,'каждые 30 мин','06:30','23:30'],['bus','Автобус X95 до Синтагмы',60,5.5,5.5,'каждые 20–40 мин','24/7'],['taxi','Такси (фиксированный тариф)',35,40,55,'по запросу','24/7']]},
+ LIS:{site:'https://www.ana.pt/',o:[['metro','Метро, красная линия',20,2,2.5,'каждые 6–9 мин','06:30','01:00'],['bus','Aerobus',30,4,4,'каждые 20 мин','07:30','23:00'],['taxi','Такси',20,15,20,'по запросу','24/7']]},
+ OPO:{site:'https://www.ana.pt/',o:[['metro','Метро, линия E',30,2.6,2.6,'каждые 20 мин','06:00','01:00'],['taxi','Такси',20,25,30,'по запросу','24/7']]},
+ AMS:{site:'https://www.schiphol.nl/',o:[['train','Поезд до Centraal',17,6,6.5,'каждые 10 мин (ночью — раз в час)','24/7'],['bus','Автобус 397',30,6.5,6.5,'каждые 10–15 мин','05:00','00:30'],['taxi','Такси',25,45,55,'по запросу','24/7']]},
+ VIE:{site:'https://www.viennaairport.com/',o:[['train','City Airport Train (CAT)',16,14,15,'каждые 30 мин','06:00','23:40'],['train','S-Bahn S7',25,4.4,4.5,'каждые 30 мин','05:00','00:00'],['taxi','Такси',25,40,45,'по запросу','24/7']]},
+ PRG:{site:'https://www.prg.aero/',o:[['bus','Airport Express (AE) до вокзала',35,4,5,'каждые 30 мин','05:30','22:00'],['bus','Автобус 59/119 + метро',40,1.6,2,'каждые 5–10 мин','04:30','00:00'],['taxi','Такси',30,25,30,'по запросу','24/7']]},
+ DBV:{site:'https://www.airport-dubrovnik.hr/',o:[['bus','Шаттл до Старого города',30,10,10,'к каждому рейсу','24/7'],['taxi','Такси',25,40,50,'по запросу','24/7']]},
+ SPU:{site:'https://www.split-airport.hr/',o:[['bus','Шаттл Pleso до центра',35,8,8,'к рейсам','05:00','23:00'],['taxi','Такси',30,40,50,'по запросу','24/7']]},
+ BUD:{site:'https://www.bud.hu/',o:[['bus','Автобус 100E до Деака',40,6,6,'каждые 20 мин','05:00','01:20'],['taxi','Такси Főtaxi',30,25,35,'по запросу','24/7']]},
+ WAW:{site:'https://www.lotnisko-chopina.pl/',o:[['train','Электричка S2 / S3',25,1,2,'каждые 15–30 мин','05:00','23:30'],['bus','Автобус 175',35,1,1.5,'каждые 10 мин','04:30','23:00'],['taxi','Такси',20,15,20,'по запросу','24/7']]},
+ ZRH:{site:'https://www.flughafen-zuerich.ch/',o:[['train','Поезд до Hauptbahnhof',12,7,7.5,'каждые 10 мин','05:00','00:30'],['taxi','Такси',20,60,80,'по запросу','24/7']]},
+ LHR:{site:'https://www.heathrow.com/',o:[['train','Elizabeth line',35,15,16,'каждые 10 мин','05:30','23:30'],['train','Heathrow Express',15,30,30,'каждые 15 мин','05:10','23:30'],['metro','Метро, линия Piccadilly',55,6,7,'каждые 5 мин','05:00','23:45'],['taxi','Чёрное такси',50,90,130,'по запросу','24/7']]},
+ DUB:{site:'https://www.dublinairport.com/',o:[['bus','Dublin Express / Aircoach',30,8,10,'каждые 15–30 мин','24/7'],['taxi','Такси',30,30,40,'по запросу','24/7']]},
+ CPH:{site:'https://www.cph.dk/',o:[['metro','Метро M2',15,4,4.5,'каждые 4–20 мин','24/7'],['train','Поезд до центрального вокзала',13,4,4.5,'каждые 10 мин','05:00','00:30'],['taxi','Такси',20,35,45,'по запросу','24/7']]},
+ HEL:{site:'https://www.finavia.fi/',o:[['train','Поезд I / P',30,4,4.5,'каждые 10 мин','05:00','01:00'],['taxi','Такси',30,40,50,'по запросу','24/7']]},
+ MLA:{site:'https://www.maltairport.com/',o:[['bus','Автобус X4 до Валлетты',25,3,3,'каждые 30 мин','05:30','23:00'],['taxi','Такси (фиксированный тариф)',20,20,25,'по запросу','24/7']]},
+ TLL:{site:'https://www.airport.ee/',o:[['metro','Трамвай 4',15,2,2,'каждые 10 мин','05:30','00:00'],['taxi','Такси',12,10,15,'по запросу','24/7']]},
+ KEF:{site:'https://www.isavia.is/',o:[['bus','Flybus до Рейкьявика',45,30,35,'к каждому рейсу','24/7'],['taxi','Такси',45,120,150,'по запросу','24/7']]}
+};
+const TR_ICON = {train:'🚆',bus:'🚌',metro:'🚇',taxi:'🚕',ferry:'⛴️',shuttle:'🚐'};
+
+// Перевод популярных праздников и пояснения (F-16)
+const HOLIDAY_RU = [
+ [/assumption|dormition|ferragosto/i,'Успение Богородицы','многие музеи и магазины закрыты, на курортах пик местных туристов'],
+ [/whit|pentecost/i,'Троица (Духов день)','длинные выходные — больше местных туристов'],
+ [/corpus christi/i,'Праздник Тела Христова','часть магазинов и учреждений закрыта'],
+ [/midsummer|st\.? john|saint john|juhannus|jāņi|jaanipäev/i,'Иванов день','многие уезжают за город, магазины закрыты'],
+ [/bastille|fête nationale|national day|nationalfeiertag/i,'Национальный праздник','парады и салют, центр города может быть перекрыт'],
+ [/independence/i,'День независимости','праздничные мероприятия, учреждения закрыты'],
+ [/statehood/i,'День государственности','учреждения закрыты'],
+ [/ascension/i,'Вознесение','длинные выходные — больше местных туристов'],
+ [/peter and paul/i,'День святых Петра и Павла','часть учреждений закрыта'],
+ [/stephen|state foundation/i,'День святого Иштвана','салют над Дунаем, центр перекрыт вечером'],
+ [/cyril and methodius/i,'День Кирилла и Мефодия','учреждения закрыты'],
+ [/jan hus/i,'День Яна Гуса','учреждения закрыты'],
+ [/portugal day/i,'День Португалии','учреждения закрыты'],
+ [/victory/i,'День победы','праздничные мероприятия'],
+ [/anti-fascist/i,'День антифашистской борьбы','учреждения закрыты'],
+ [/bank holiday/i,'Банковский выходной','длинные выходные — дороже жильё'],
+ [/constitution/i,'День Конституции','учреждения закрыты'],
+ [/commerce/i,'День торговли','длинные выходные'],
+ [/unity|union/i,'День единства','учреждения закрыты'],
+ [/liberation/i,'День освобождения','праздничные мероприятия'],
+ [/st\.? james|santiago/i,'День святого Иакова','региональный праздник'],
+ [/labour|labor|may day/i,'День труда','учреждения закрыты'],
+ [/easter/i,'Пасха','учреждения закрыты']
+];
+
+/* ================= Утилиты ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>d.getUTCFullYear()+'-'+pad(d.getUTCMonth()+1)+'-'+pad(d.getUTCDate());
+const D=s=>new Date(s+'T00:00:00Z');
+const addDays=(s,n)=>{const d=D(s);d.setUTCDate(d.getUTCDate()+n);return iso(d)};
+const diffDays=(a,b)=>Math.round((D(b)-D(a))/864e5);
+const range=(a,b)=>{const r=[];for(let s=a;s<=b;s=addDays(s,1))r.push(s);return r};
+const dow=s=>(D(s).getUTCDay()+6)%7; // 0=Пн
+const fmtD=s=>`${+s.slice(8)} ${MONTHS_GEN[+s.slice(5,7)-1]}`;
+const fmtDs=s=>`${+s.slice(8)} ${MONTHS_SH[+s.slice(5,7)-1]}`;
+const fmtRange=(a,b)=>a.slice(5,7)===b.slice(5,7)?`${+a.slice(8)}–${+b.slice(8)} ${MONTHS_GEN[+a.slice(5,7)-1]}`:`${fmtD(a)} — ${fmtD(b)}`;
+const plural=(n,a,b,c)=>{n=Math.abs(n)%100;const m=n%10;return n>10&&n<20?c:m>1&&m<5?b:m===1?a:c};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const avg=a=>{const v=a.filter(x=>x!=null&&isFinite(x));return v.length?v.reduce((s,x)=>s+x,0)/v.length:null};
+const fmtMin=m=>{m=Math.round(m);const h=Math.floor(m/60),mm=m%60;return h?`${h} ч${mm?' '+mm+' мин':''}`:`${mm} мин`};
+const flagOf=cc=>cc.toUpperCase().replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0)));
+const now=new Date();
+const todayIso=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+const CUR_Y=now.getFullYear();
+const YEARS=todayIso<=`${CUR_Y}-08-31`?[CUR_Y,CUR_Y+1]:[CUR_Y+1];
+const dateAllowed=s=>{const m=+s.slice(5,7);return m>=6&&m<=8&&s>=todayIso&&YEARS.includes(+s.slice(0,4))};
+
+const CITIES={};
+Object.entries(DEST).forEach(([cc,arr])=>arr.forEach(([iata,name,lat,lon,sea])=>CITIES[iata]={iata,name,lat,lon,sea:!!sea,cc}));
+const airportCC=code=>(CITIES[code]&&CITIES[code].cc)||HUB_CC[code]||null;
+const mctFor=code=>SCHENGEN.has(airportCC(code))?60:90;
+
+function toast(msg){const t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
+
+/* Загрузка с кэшем (PRD, раздел 8): при сбое — данные из кэша с пометкой давности */
+async function cfetch(url,ttlMin){
+  const key='trv1:'+url;let cached=null;
+  try{cached=JSON.parse(localStorage.getItem(key))}catch(e){}
+  const age=cached?(Date.now()-cached.t)/60000:Infinity;
+  if(cached&&age<ttlMin) return {data:cached.d,age,stale:false};
+  try{
+    const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),20000);
+    const r=await fetch(url,{signal:ctl.signal});clearTimeout(to);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    try{localStorage.setItem(key,JSON.stringify({t:Date.now(),d}))}catch(e){}
+    return {data:d,age:0,stale:false};
+  }catch(e){
+    if(cached) return {data:cached.d,age,stale:true};
+    throw e;
+  }
+}
+const staleNote=r=>r&&r.stale?` <span class="badge sun">обновлено ${Math.round(r.age)} мин назад</span>`:'';
+
+/* ================= Состояние ================= */
+const S={from:null,cc:null,city:null,d1:null,d2:null,len:7,adults:1,children:0,prio:'balance',
+  currency:'RUB',eur:null,countries:{},cca3:{},weather:null,weatherErr:null,season:null,seasonErr:null,
+  windows:[],sel:0,run:0,flights:{},fSort:'wait',fDirect:false,fMax1:false,fMaxH:0,arrTime:null,flightShift:0};
+const WEIGHTS={balance:{w:35,l:30,c:20,p:15},weather:{w:60,l:15,c:15,p:10},layover:{w:20,l:55,c:10,p:15},crowd:{w:20,l:15,c:50,p:15}};
+
+/* ================= Всплывающие окна ================= */
+const Pop={cur:null,
+  open(root){if(this.cur&&this.cur!==root)this.close();this.cur=root;const p=root.querySelector('.pop');p.hidden=false;p.style.left='0px';
+    const r=p.getBoundingClientRect();if(r.right>innerWidth-16)p.style.left=Math.min(0,innerWidth-16-r.right)+'px';
+    root.querySelector('.control').setAttribute('aria-expanded','true')},
+  close(focus){if(!this.cur)return;const r=this.cur;this.cur=null;r.querySelector('.pop').hidden=true;const b=r.querySelector('.control');b.setAttribute('aria-expanded','false');if(focus)b.focus()},
+  isOpen(r){return this.cur===r}};
+document.addEventListener('pointerdown',e=>{if(Pop.cur&&!Pop.cur.contains(e.target))Pop.close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&Pop.cur){e.preventDefault();Pop.close(true)}});
+
+function Select(id,{placeholder,onChange}){
+  const root=document.getElementById(id),btn=root.querySelector('.control'),pop=root.querySelector('.pop'),
+        list=pop.querySelector('[role=listbox]'),input=pop.querySelector('input');
+  let items=[],filtered=[],active=0,value=null;
+  const renderBtn=()=>{const it=items.find(i=>i.value===value);root.querySelector('.val').innerHTML=it?it.label:`<span class="ph">${placeholder}</span>`};
+  const rank=(s,q)=>s.startsWith(q)?0:s.includes(' '+q)||s.includes('-'+q)||s.includes('('+q)?1:s.includes(q)?2:9;
+  const renderList=()=>{const q=input?input.value.trim().toLowerCase():'';
+    filtered=q?items.map((it,k)=>({it,k,r:rank(it.search,q)})).filter(x=>x.r<9).sort((a,b)=>a.r-b.r||a.k-b.k).map(x=>x.it):items;
+    list.innerHTML=filtered.length?filtered.map((it,k)=>`<li role="option" id="${id}-o${k}" data-k="${k}" aria-selected="${it.value===value}">${it.html||it.label}</li>`).join(''):'<li class="empty">Ничего не нашли</li>'};
+  const setActive=k=>{if(!filtered.length)return;active=clamp(k,0,filtered.length-1);
+    list.querySelectorAll('[role=option]').forEach((el,i)=>el.classList.toggle('active',i===active));
+    const el=list.querySelector(`[data-k="${active}"]`);if(el){el.scrollIntoView({block:'nearest'});(input||list).setAttribute('aria-activedescendant',el.id)}};
+  const open=()=>{Pop.open(root);if(input)input.value='';renderList();setActive(Math.max(0,filtered.findIndex(i=>i.value===value)));(input||list).focus()};
+  const choose=k=>{const it=filtered[k];if(!it)return;value=it.value;renderBtn();Pop.close(true);onChange&&onChange(value)};
+  btn.addEventListener('click',()=>Pop.isOpen(root)?Pop.close():open());
+  btn.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();open()}});
+  list.addEventListener('click',e=>{const li=e.target.closest('[role=option]');if(li)choose(+li.dataset.k)});
+  list.addEventListener('mousemove',e=>{const li=e.target.closest('[role=option]');if(li&&+li.dataset.k!==active)setActive(+li.dataset.k)});
+  if(input)input.addEventListener('input',()=>{renderList();setActive(0)});
+  pop.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'){e.preventDefault();setActive(active+1)}
+    else if(e.key==='ArrowUp'){e.preventDefault();setActive(active-1)}
+    else if(e.key==='Enter'){e.preventDefault();choose(active)}
+    else if(e.key==='Tab'){Pop.close()}
+    else if(!input&&e.key.length===1){const k=filtered.findIndex(i=>i.search.startsWith(e.key.toLowerCase()));if(k>=0)setActive(k)}});
+  renderBtn();
+  return {get value(){return value},
+    set(v){value=items.some(i=>i.value===v)?v:null;renderBtn()},
+    setItems(arr){items=arr;if(value!=null&&!items.some(i=>i.value===value))value=null;renderBtn()},
+    enable(b){btn.disabled=!b}};
+}
+
+/* ================= Форма ================= */
+const selFrom=Select('f-from',{placeholder:'Выберите город',onChange:v=>{S.from=v;validate()}});
+selFrom.setItems(DEPARTURES.map(([c,city,ap])=>({value:c,label:`${esc(city)} (${c})`,html:`${esc(city)} <small>${esc(ap)}</small><span class="iata">${c}</span>`,search:`${city} ${c} ${ap}`.toLowerCase()})));
+
+const selCountry=Select('f-country',{placeholder:'Выберите страну',onChange:v=>{S.cc=v;S.city=null;fillCities();validate()}});
+const selCity=Select('f-city',{placeholder:'Сначала страна',onChange:v=>{S.city=v;validate()}});
+function countryName(cc){return (S.countries[cc]&&S.countries[cc].name)||COUNTRY_RU[cc]||cc}
+// Флаг картинкой: эмодзи-флаги не отображаются в Windows
+function countryFlag(cc){return `<img class="flag" src="https://flagcdn.com/w40/${cc.toLowerCase()}.png" alt="${flagOf(cc)}" width="20" height="15" loading="lazy">`}
+function fillCountries(){
+  selCountry.setItems(Object.keys(DEST).map(cc=>({value:cc,label:`${countryFlag(cc)} ${esc(countryName(cc))}`,search:countryName(cc).toLowerCase()}))
+    .sort((a,b)=>a.search.localeCompare(b.search,'ru')));
+  selCountry.set(S.cc);
+}
+function fillCities(){
+  const list=S.cc?DEST[S.cc]:[];
+  selCity.setItems(list.map(([c,name])=>({value:c,label:`${esc(name)} (${c})`,html:`${esc(name)}<span class="iata">${c}</span>`,search:name.toLowerCase()})));
+  selCity.enable(!!S.cc);selCity.set(S.city);
+  $('#f-city .val').innerHTML=S.city?`${esc(CITIES[S.city].name)} (${S.city})`:`<span class="ph">${S.cc?'Выберите город':'Сначала страна'}</span>`;
+}
+fillCountries();fillCities();
+
+const selLen=Select('f-len',{placeholder:'7 дней',onChange:v=>{S.len=v;validate()}});
+selLen.setItems(Array.from({length:19},(_,i)=>{const n=i+3;return {value:n,label:`${n} ${plural(n,'день','дня','дней')}`,search:String(n)}}));
+selLen.set(7);
+
+/* Календарь (F-4) */
+const Cal={year:YEARS[0],a:null,b:null,hover:null};
+const calRoot=$('#f-dates'),calPop=calRoot.querySelector('.pop'),calBtn=calRoot.querySelector('.control');
+function renderCalBtn(){$('#v-dates').innerHTML=S.d1&&S.d2?`${fmtDs(S.d1)} — ${fmtDs(S.d2)} ${S.d2.slice(0,4)}`:'<span class="ph">Выберите даты</span>'}
+function renderCal(){
+  const y=Cal.year;
+  let h=`<div class="cal-head">${YEARS.length>1?`<div class="seg" role="group" aria-label="Год">${YEARS.map(Y=>`<button type="button" data-year="${Y}" aria-pressed="${Y===y}">Лето ${Y}</button>`).join('')}</div>`:`<b>Лето ${y}</b>`}
+    <span class="cal-hint" aria-live="polite">${Cal.a&&!Cal.b?'Теперь выберите дату возвращения':'Выберите дату начала периода'} · доступно 1 июня — 31 августа</span></div><div class="cal-months">`;
+  for(let m=6;m<=8;m++){
+    const first=`${y}-${pad(m)}-01`,days=new Date(Date.UTC(y,m,0)).getUTCDate();
+    h+=`<div class="cal-m"><h4>${MONTHS_NOM[m-1]}</h4><div class="cal-g">${WD.map(w=>`<span class="wd" aria-hidden="true">${w}</span>`).join('')}${'<span></span>'.repeat(dow(first))}`;
+    for(let d=1;d<=days;d++){const s=`${y}-${pad(m)}-${pad(d)}`;
+      h+=`<button type="button" class="day" data-d="${s}" ${dateAllowed(s)?'':'disabled'} aria-label="${fmtD(s)} ${y}">${d}</button>`}
+    h+='</div></div>';
+  }
+  calPop.innerHTML=h+'</div>';paintCal();
+}
+function paintCal(){
+  const a=Cal.a,b=Cal.b||(Cal.a&&Cal.hover&&Cal.hover>Cal.a?Cal.hover:null);
+  calPop.querySelectorAll('.day').forEach(el=>{const s=el.dataset.d;
+    el.classList.toggle('edge',s===a||s===b);el.classList.toggle('inr',!!(a&&b&&s>a&&s<b));el.classList.toggle('today',s===todayIso);
+    el.setAttribute('aria-pressed',String(s===a||s===b))});
+}
+calBtn.addEventListener('click',()=>{if(Pop.isOpen(calRoot))return Pop.close();
+  Cal.a=S.d1;Cal.b=S.d2;Cal.year=S.d1?+S.d1.slice(0,4):YEARS[0];renderCal();Pop.open(calRoot);
+  const f=calPop.querySelector(`.day[data-d="${S.d1}"]`)||calPop.querySelector('.day:not(:disabled)');f&&f.focus()});
+calPop.addEventListener('click',e=>{
+  const yb=e.target.closest('[data-year]');if(yb){Cal.year=+yb.dataset.year;Cal.a=Cal.b=null;renderCal();return}
+  const el=e.target.closest('.day');if(!el||el.disabled)return;const s=el.dataset.d;
+  if(!Cal.a||Cal.b||s<Cal.a){Cal.a=s;Cal.b=null;paintCal();calPop.querySelector('.cal-hint').textContent='Теперь выберите дату возвращения';return}
+  Cal.b=s;S.d1=Cal.a;S.d2=Cal.b;paintCal();renderCalBtn();validate();setTimeout(()=>Pop.close(true),150)});
+calPop.addEventListener('mouseover',e=>{const el=e.target.closest('.day');if(el&&Cal.a&&!Cal.b){Cal.hover=el.dataset.d;paintCal()}});
+calPop.addEventListener('keydown',e=>{const el=e.target.closest('.day');if(!el)return;
+  const step={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key];if(!step)return;e.preventDefault();
+  let s=el.dataset.d;for(let i=0;i<14;i++){s=addDays(s,step);const t=calPop.querySelector(`.day[data-d="${s}"]`);if(!t)return;if(!t.disabled){t.focus();if(Cal.a&&!Cal.b){Cal.hover=s;paintCal()}return}}});
+renderCalBtn();
+
+/* Пассажиры (F-6) */
+function renderPax(){
+  $('#o-adults').textContent=S.adults;$('#o-children').textContent=S.children;
+  $('#v-pax').textContent=`${S.adults} ${plural(S.adults,'взрослый','взрослых','взрослых')}`+(S.children?`, ${S.children} ${plural(S.children,'ребёнок','ребёнка','детей')}`:'');
+  document.querySelectorAll('[data-pax]').forEach(b=>{const k=b.dataset.pax,d=+b.dataset.d,v=S[k]+d;b.disabled=k==='adults'?(v<1||v>9):(v<0||v>8)});
+}
+const paxRoot=$('#f-pax');
+paxRoot.querySelector('.control').addEventListener('click',()=>{if(Pop.isOpen(paxRoot))return Pop.close();Pop.open(paxRoot);paxRoot.querySelector('.cnt button:not(:disabled)').focus()});
+paxRoot.addEventListener('click',e=>{const b=e.target.closest('[data-pax]');if(!b||b.disabled)return;S[b.dataset.pax]+=+b.dataset.d;renderPax()});
+renderPax();
+
+document.querySelectorAll('input[name=prio]').forEach(r=>r.addEventListener('change',()=>{S.prio=r.value;if(S.windows.length)computeWindows(S.run)}));
+
+function validate(){
+  const ok=!!(S.from&&S.cc&&S.city&&S.d1&&S.d2);
+  $('#go').disabled=!ok;
+  const miss=[!S.from&&'город вылета',!S.cc&&'страну',!S.city&&'город',!(S.d1&&S.d2)&&'даты'].filter(Boolean);
+  $('#formHint').textContent=ok?(diffDays(S.d1,S.d2)+1<S.len?`Период короче длительности — подберём в пределах ${diffDays(S.d1,S.d2)+1} дн.`:''):'Осталось выбрать: '+miss.join(', ');
+  return ok;
+}
+
+/* Валюта */
+document.querySelectorAll('[data-cur]').forEach(b=>b.addEventListener('click',()=>{
+  S.currency=b.dataset.cur;document.querySelectorAll('[data-cur]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  if(S.currency==='EUR'&&!S.eur)toast('Курс евро ещё не загружен — показываем цены в рублях');
+  if(!$('#results').hidden){renderFlights();renderTransfer()}}));
+const fmtRub=rub=>{if(S.currency==='EUR'&&S.eur)return '€'+Math.round(rub/S.eur).toLocaleString('ru-RU');return Math.round(rub).toLocaleString('ru-RU')+' ₽'};
+const fmtEurRange=(lo,hi)=>{
+  if(S.currency==='RUB'&&S.eur){const r=v=>Math.round(v*S.eur/50)*50;return r(lo)===r(hi)?`≈ ${r(lo).toLocaleString('ru-RU')} ₽`:`≈ ${r(lo).toLocaleString('ru-RU')}–${r(hi).toLocaleString('ru-RU')} ₽`}
+  const f=v=>(Math.round(v*10)/10).toString().replace('.',',');return lo===hi?`€${f(lo)}`:`€${f(lo)}–${f(hi)}`};
+
+/* ================= Внешние данные ================= */
+async function loadCountries(){
+  try{
+    const r=await cfetch('https://restcountries.com/v3.1/region/europe?fields=cca2,cca3,translations,flag,borders',7*1440);
+    r.data.forEach(c=>{S.cca3[c.cca3]=c.cca2;S.countries[c.cca2]={name:(c.translations&&c.translations.rus&&c.translations.rus.common)||COUNTRY_RU[c.cca2],flag:c.flag,borders:c.borders||[]}});
+    fillCountries();
+  }catch(e){/* остаётся встроенный справочник названий */}
+}
+async function loadRate(){
+  try{const r=await cfetch('https://www.cbr-xml-daily.ru/daily_json.js',180);S.eur=r.data.Valute.EUR.Value/(r.data.Valute.EUR.Nominal||1)}
+  catch(e){try{const r=await cfetch('https://open.er-api.com/v6/latest/EUR',180);S.eur=r.data.rates.RUB}catch(e2){}}
+}
+
+async function loadWeather(){
+  const c=CITIES[S.city],{d1,d2}=S,horizon=addDays(todayIso,15);
+  const needF=d1<=horizon,needC=d2>horizon;
+  const endY=todayIso>=`${CUR_Y}-09-07`?CUR_Y:CUR_Y-1,startY=endY-9;
+  const out={days:{},kinds:new Set(),stale:null,years:`${startY}–${endY}`,sstYear:endY,uvYears:`${endY-2}–${endY}`};
+  const fc={},cl={},uv={},sst={};const tasks=[];const ll=`latitude=${c.lat}&longitude=${c.lon}`;
+  if(needF)tasks.push(cfetch(`https://api.open-meteo.com/v1/forecast?${ll}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,sunshine_duration,uv_index_max&timezone=auto&forecast_days=16`,180).then(r=>{
+    if(r.stale)out.stale=r;const d=r.data.daily;
+    d.time.forEach((t,i)=>{if(d.temperature_2m_max[i]!=null)fc[t]={tmax:d.temperature_2m_max[i],tmin:d.temperature_2m_min[i],mm:d.precipitation_sum[i],prob:d.precipitation_probability_max[i],sun:d.sunshine_duration[i]/3600,uv:d.uv_index_max[i],kind:'f'}})}));
+  if(needC){
+    tasks.push(cfetch(`https://archive-api.open-meteo.com/v1/archive?${ll}&start_date=${startY}-06-01&end_date=${endY}-08-31&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,sunshine_duration&timezone=auto`,30*1440).then(r=>{
+      if(r.stale)out.stale=r;const d=r.data.daily,acc={};
+      d.time.forEach((t,i)=>{const md=t.slice(5);if(md<'06-01'||md>'08-31'||d.temperature_2m_max[i]==null)return;
+        const a=acc[md]||(acc[md]={n:0,tmax:0,tmin:0,mm:0,wet:0,sun:0});a.n++;a.tmax+=d.temperature_2m_max[i];a.tmin+=d.temperature_2m_min[i];
+        a.mm+=d.precipitation_sum[i]||0;a.wet+=(d.precipitation_sum[i]||0)>=1?1:0;a.sun+=(d.sunshine_duration[i]||0)/3600});
+      Object.entries(acc).forEach(([md,a])=>cl[md]={tmax:a.tmax/a.n,tmin:a.tmin/a.n,mm:a.mm/a.n,prob:100*a.wet/a.n,sun:a.sun/a.n,kind:'c'})}));
+    tasks.push(cfetch(`https://historical-forecast-api.open-meteo.com/v1/forecast?${ll}&start_date=${endY-2}-06-01&end_date=${endY}-08-31&daily=uv_index_max&timezone=auto`,30*1440).then(r=>{
+      const d=r.data.daily,acc={};d.time.forEach((t,i)=>{const md=t.slice(5),v=d.uv_index_max[i];if(md<'06-01'||md>'08-31'||v==null)return;(acc[md]||(acc[md]=[])).push(v)});
+      Object.entries(acc).forEach(([md,a])=>uv[md]=avg(a))}).catch(()=>{}));
+  }
+  if(c.sea)tasks.push(cfetch(`https://marine-api.open-meteo.com/v1/marine?${ll}&hourly=sea_surface_temperature&start_date=${endY}-06-01&end_date=${endY}-08-31&timezone=auto`,30*1440).then(r=>{
+    const h=r.data.hourly,acc={};h.time.forEach((t,i)=>{const v=h.sea_surface_temperature[i];if(v==null)return;(acc[t.slice(5,10)]||(acc[t.slice(5,10)]=[])).push(v)});
+    Object.entries(acc).forEach(([md,a])=>sst[md]=avg(a))}).catch(()=>{}));
+  await Promise.all(tasks);
+  range(d1,d2).forEach(t=>{const md=t.slice(5);let w=fc[t]?{...fc[t]}:cl[md]?{...cl[md],uv:uv[md]}:null;
+    if(w){w.sst=sst[md]!=null?sst[md]:null;out.days[t]=w;out.kinds.add(w.kind)}});
+  if(!Object.keys(out.days).length)throw new Error('no weather');
+  return out;
+}
+
+// Летние каникулы по регионам: явные периоды «Summer holidays», иначе — от «конца занятий» до 31 августа
+async function schoolPeriods(c,y){
+  const r=await cfetch(`https://openholidaysapi.org/SchoolHolidays?countryIsoCode=${c}&languageIsoCode=EN&validFrom=${y}-06-01&validTo=${y}-08-31`,30*1440);
+  const name=p=>(p.name&&p.name[0]&&p.name[0].text)||'';
+  let ps=r.data.filter(p=>p.type==='School'&&/summer/i.test(name(p))&&diffDays(p.startDate,p.endDate)>=14).map(p=>({s:p.startDate,e:p.endDate}));
+  if(!ps.length)ps=r.data.filter(p=>p.type==='EndOfLessons').map(p=>({s:addDays(p.startDate,1),e:`${y}-08-31`}));
+  return ps;
+}
+async function loadSeason(){
+  const y=S.d1.slice(0,4),cc=S.cc;
+  await countriesReady; // нужны соседние страны
+  const holR=await cfetch(`https://date.nager.at/api/v3/PublicHolidays/${y}/${cc}`,30*1440);
+  const hol={};holR.data.forEach(h=>{if(h.date>=S.d1&&h.date<=S.d2)(hol[h.date]||(hol[h.date]=[])).push(h)});
+  const rc=S.countries[cc]&&S.countries[cc].borders;
+  const neighbors=(rc&&rc.length?rc.map(c3=>S.cca3[c3]):(NEIGHBORS[cc]||[])).filter(Boolean);
+  let supported=new Set();
+  try{const r=await cfetch('https://openholidaysapi.org/Countries?languageIsoCode=EN',7*1440);supported=new Set(r.data.map(c=>c.isoCode))}catch(e){}
+  const school={},periods={},estimated={};
+  await Promise.all([cc,...neighbors].filter(c=>supported.has(c)).map(async c=>{
+    try{
+      let ps=await schoolPeriods(c,+y),est=false;
+      if(!ps.length){ps=(await schoolPeriods(c,+y-1)).map(p=>({s:(+y)+p.s.slice(4),e:(+y)+p.e.slice(4)}));est=true}
+      if(!ps.length)return;
+      const m={};range(S.d1,S.d2).forEach(t=>m[t]=ps.filter(p=>t>=p.s&&t<=p.e).length/ps.length);
+      school[c]=m;periods[c]=ps;if(est)estimated[c]=+y-1;
+    }catch(e){}
+  }));
+  return {hol,school,periods,estimated,neighbors,stale:holR.stale?holR:null};
+}
+
+function crowdDay(t){
+  const se=S.season;if(!se)return null;
+  const destS=se.school[S.cc]?(se.school[S.cc][t]||0):null;
+  const nb=se.neighbors.filter(c=>se.school[c]);const nbS=nb.length?avg(nb.map(c=>se.school[c][t]||0)):null;
+  const school=destS!=null&&nbS!=null?.6*destS+.4*nbS:destS!=null?destS:nbS!=null?nbS:0;
+  const hol=se.hol[t]?1:(se.hol[addDays(t,-1)]||se.hol[addDays(t,1)])?.5:0;
+  const wk=dow(t)>=5?1:0;
+  return clamp(.6*school+.25*hol+.15*wk);
+}
+const crowdLevel=v=>v<.35?['low','низкая']:v<.6?['mid','средняя']:['high','высокая'];
+
+function comfort(w){
+  if(!w||w.tmax==null)return null;
+  const t=w.tmax,p=w.prob||0;
+  const ts=t>=22&&t<=28?1:(t>=19&&t<22)||(t>28&&t<=31)?.65:(t>=16&&t<19)||(t>31&&t<33)?.35:.1;
+  let rs=p<=25?1:p<=45?.75:p<=65?.45:.2;if((w.mm||0)>=10)rs=.1;
+  const level=t>=33||(w.mm||0)>=10||p>=80?'red':t>29||t<20||p>=50?'yellow':'green';
+  return {score:.65*ts+.35*rs,level};
+}
+
+/* Перелёты */
+function offerSummary(o){
+  const legs=[o.outbound,o.inbound].filter(l=>l&&l.length).map(segs=>{
+    const lay=[];for(let i=0;i<segs.length-1;i++){const m=(new Date(segs[i+1].dep)-new Date(segs[i].arr))/60000;const mct=mctFor(segs[i].to);
+      lay.push({ap:segs[i].to,min:m,risk:m<mct,long:m>360,mct})}
+    return {segs,lay,dur:(new Date(segs[segs.length-1].arr)-new Date(segs[0].dep))/60000}});
+  return {...o,legs,wait:legs.reduce((s,l)=>s+l.lay.reduce((a,x)=>a+x.min,0),0),total:legs.reduce((s,l)=>s+l.dur,0),
+    stops:Math.max(0,...legs.map(l=>l.segs.length-1)),airlines:[...new Set(legs.flatMap(l=>l.segs.map(s=>s.carrier)))]};
+}
+async function loadFlights(dep,ret){
+  const key=`${S.from}-${S.city}-${dep}-${ret}-${S.adults}-${S.children}`;
+  if(S.flights[key])return S.flights[key];
+  const q=new URLSearchParams({origin:S.from,destination:S.city,depart:dep,return:ret,adults:S.adults,children:S.children});
+  const r=await cfetch(`${CONFIG.FLIGHTS_PROXY_URL}?${q}`,30);
+  const offers=(r.data.offers||[]).map(o=>{const s=offerSummary(o);s.rub=o.currency&&o.currency!=='RUB'&&S.eur&&o.currency==='EUR'?o.price*S.eur:o.price;return s});
+  return S.flights[key]={offers,stale:r.stale?r:null};
+}
+const aviasalesLink=(dep,ret)=>{const dm=s=>s.slice(8)+s.slice(5,7);return `https://www.aviasales.ru/search/${S.from}${dm(dep)}${S.city}${dm(ret)}${S.adults}${S.children||''}`};
+const gflightsLink=(dep,ret)=>`https://www.google.com/travel/flights?hl=ru&q=${encodeURIComponent(`Flights from ${S.from} to ${S.city} on ${dep} through ${ret}`)}`;
+
+/* ================= Расчёт окон (F-26 – F-28) ================= */
+async function computeWindows(run){
+  const days=range(S.d1,S.d2),len=Math.min(S.len,days.length),W=WEIGHTS[S.prio];
+  const wins=[];
+  for(let i=0;i+len<=days.length;i++){
+    const ds=days.slice(i,i+len);
+    const cs=ds.map(t=>comfort(S.weather&&S.weather.days[t])).filter(Boolean);
+    const cr=S.season?ds.map(crowdDay):null;
+    wins.push({start:ds[0],end:ds[ds.length-1],i0:i,i1:i+len-1,
+      w:cs.length?avg(cs.map(c=>c.score)):null,c:cr?1-avg(cr):null,crowd:cr?avg(cr):null,l:null,p:null,best:null});
+  }
+  const score=w=>{let s=0,t=0;[['w',W.w],['c',W.c],['l',W.l],['p',W.p]].forEach(([k,wt])=>{if(w[k]!=null){s+=w[k]*wt;t+=wt}});return t?Math.round(100*s/t):null};
+  wins.forEach(w=>w.idx=score(w));
+  if(CONFIG.FLIGHTS_PROXY_URL){
+    const top=[...wins].sort((a,b)=>(b.idx||0)-(a.idx||0)).slice(0,5);
+    await Promise.all(top.map(w=>loadFlights(w.start,w.end).then(f=>{w.flights=f;
+      const ok=f.offers.filter(o=>!o.legs.some(l=>l.lay.some(x=>x.risk)));const pool=ok.length?ok:f.offers;
+      if(pool.length){w.best=[...pool].sort((a,b)=>a.wait-b.wait||a.rub-b.rub)[0];w.l=clamp(1-w.best.wait/480);w.minPrice=Math.min(...pool.map(o=>o.rub))}}).catch(()=>{})));
+    const prices=top.filter(w=>w.minPrice).map(w=>w.minPrice);const pmin=Math.min(...prices);
+    top.forEach(w=>{if(w.minPrice)w.p=pmin/w.minPrice;w.idx=score(w)});
+  }
+  if(run!==S.run)return;
+  const sorted=[...wins].filter(w=>w.idx!=null).sort((a,b)=>b.idx-a.idx||a.start.localeCompare(b.start));
+  const pick=[];for(const w of sorted){if(pick.every(p=>Math.abs(diffDays(p.start,w.start))>=3))pick.push(w);if(pick.length===3)break}
+  S.windows=pick;S.sel=0;S.short=len<S.len;
+  renderRec();selectWindow(0,run);
+}
+function explain(w){
+  const parts=[];const ds=range(w.start,w.end);
+  if(S.weather){const ws=ds.map(t=>S.weather.days[t]).filter(Boolean);const tx=avg(ws.map(x=>x.tmax));
+    if(tx!=null)parts.push(tx>=31?`жарко, до +${Math.round(Math.max(...ws.map(x=>x.tmax)))}°`:tx>=22?`тепло, около +${Math.round(tx)}°`:`прохладно, около +${Math.round(tx)}°`);
+    const wet=ws.filter(x=>(x.prob||0)>=50).length;parts.push(wet?`возможны дожди (${wet} ${plural(wet,'день','дня','дней')})`:'почти без дождей')}
+  if(S.season){const hs=ds.filter(t=>S.season.hol[t]);parts.push(hs.length?`праздник ${fmtDs(hs[0])}`:'без праздников');
+    parts.push({low:'мало туристов',mid:'средняя загруженность',high:'пик туристов'}[crowdLevel(w.crowd)[0]])}
+  if(w.best)parts.push(w.best.stops===0?'прямой рейс':`пересадка ${fmtMin(w.best.legs[0].lay[0]?w.best.legs[0].lay[0].min:w.best.wait)} в ${w.best.legs[0].lay[0]?w.best.legs[0].lay[0].ap:''}`);
+  const s=parts.join(', ');return s.charAt(0).toUpperCase()+s.slice(1)+'.';
+}
+
+/* ================= Отрисовка ================= */
+const skel=n=>Array.from({length:n},(_,i)=>`<div class="sk" style="width:${90-i*12}%"></div>`).join('');
+const errBox=(what,key)=>`<div class="err"><span>Не удалось загрузить данные о ${what}. Попробуйте через минуту.</span><button type="button" class="btn btn-ghost btn-sm" data-retry="${key}">Повторить</button></div>`;
+const scoreColor=v=>v>=75?'var(--ok)':v>=55?'var(--sun)':'var(--warn)';
+
+function renderRec(){
+  const b=$('#recBody');
+  if(!S.windows.length){b.innerHTML=S.weatherErr&&S.seasonErr?errBox('погоде и сезонности','all'):'<div class="info">Не получилось рассчитать окна — проверьте даты.</div>';return}
+  const W=WEIGHTS[S.prio],noF=!CONFIG.FLIGHTS_PROXY_URL;
+  const comp=[['w','Погода',W.w],['c','Мало людей',W.c],['l','Пересадки',W.l],['p','Цена',W.p]];
+  b.innerHTML=`<div class="rec-cards">${S.windows.map((w,i)=>`
+    <button type="button" class="rec" data-win="${i}" aria-pressed="${i===S.sel}">
+      <div class="row"><div><div class="rank">${i===0?'⭐ Лучшее окно':`Вариант ${i+1}`}</div><div class="dates">${fmtRange(w.start,w.end)}</div></div>
+      <div class="score" style="background:${scoreColor(w.idx)}" aria-label="Индекс поездки ${w.idx} из 100"><span>${w.idx}<small>из 100</small></span></div></div>
+      <p>${esc(explain(w))}</p>
+      <div class="bars">${comp.filter(([k])=>w[k]!=null).map(([k,n,wt])=>`<div class="bar"><span>${n} · ${wt}%</span><i><b style="width:${Math.round(w[k]*100)}%"></b></i><span>${Math.round(w[k]*100)}</span></div>`).join('')}</div>
+    </button>`).join('')}</div>
+  <p class="note">Индекс поездки 0–100 учитывает погоду, загруженность${noF?'':', время пересадок и цену'}; веса зависят от выбранного приоритета.
+  ${noF?'Источник авиабилетов пока не подключён, поэтому пересадки и цена в индекс не вошли.':''}
+  ${S.short?` Выбранный период короче ${S.len} дн. — окна подобраны на весь период.`:''}${S.weatherErr?' Погода не загрузилась и не учтена.':''}${S.seasonErr?' Сезонность не загрузилась и не учтена.':''}</p>`;
+}
+$('#recBody').addEventListener('click',e=>{const c=e.target.closest('[data-win]');if(c)selectWindow(+c.dataset.win,S.run)});
+
+function selectWindow(i,run){
+  S.sel=i;S.flightShift=0;S.arrTime=null;
+  document.querySelectorAll('[data-win]').forEach(el=>el.setAttribute('aria-pressed',String(+el.dataset.win===i)));
+  renderWeather();renderSeason();renderFlights(run);renderTransfer();
+}
+const curWin=()=>S.windows[S.sel]||null;
+
+function renderWeather(){
+  const b=$('#weatherBody'),k=$('#wKind');
+  if(S.weatherErr){k.innerHTML='';b.innerHTML=errBox('погоде','weather');return}
+  if(!S.weather){b.innerHTML=skel(5);return}
+  const W=S.weather,kinds=W.kinds;
+  k.innerHTML=`<span class="badge ${kinds.has('f')?'ok':'sun'}">${kinds.has('f')&&kinds.has('c')?'Прогноз + климатическая норма':kinds.has('f')?'Прогноз погоды':`Климатическая норма ${W.years}`}</span>${staleNote(W.stale)}`;
+  const all=range(S.d1,S.d2),w=curWin();
+  const ws=(w?range(w.start,w.end):all).map(t=>W.days[t]).filter(Boolean);
+  const f1=v=>v==null?'—':(Math.round(v*10)/10).toString().replace('.',',');
+  const tmax=avg(ws.map(x=>x.tmax)),tmin=avg(ws.map(x=>x.tmin)),prob=avg(ws.map(x=>x.prob)),sun=avg(ws.map(x=>x.sun)),uv=avg(ws.map(x=>x.uv)),sst=avg(ws.map(x=>x.sst));
+  const lv=ws.map(comfort).filter(Boolean),cnt={green:0,yellow:0,red:0};lv.forEach(c=>cnt[c.level]++);
+  const main=cnt.red>=Math.max(2,lv.length/4)?['warn','Бывает экстремально']:cnt.green>=lv.length/2?['ok','Комфортно']:['sun','Жарковато или прохладно'];
+  b.innerHTML=`<p class="note" style="margin:0 0 10px">${w?`Окно ${fmtRange(w.start,w.end)}`:'Весь период'} · ${esc(CITIES[S.city].name)} · <span class="badge ${main[0]}">${main[1]}</span></p>
+  <div class="stats">
+    <div class="stat"><div class="k">Днём</div><div class="v">${tmax==null?'—':'+'+Math.round(tmax)+'°'}</div></div>
+    <div class="stat"><div class="k">Ночью</div><div class="v">${tmin==null?'—':(tmin>=0?'+':'')+Math.round(tmin)+'°'}</div></div>
+    <div class="stat"><div class="k">${kinds.has('c')&&!kinds.has('f')?'Дней с дождём':'Вероятность осадков'}</div><div class="v">${prob==null?'—':Math.round(prob)+'%'}</div></div>
+    <div class="stat"><div class="k">Солнце</div><div class="v">${f1(sun)} <small>ч/день</small></div></div>
+    <div class="stat"><div class="k">УФ-индекс${kinds.has('c')&&!kinds.has('f')?` <small>(${W.uvYears})</small>`:''}</div><div class="v">${f1(uv)}</div></div>
+    <div class="stat"><div class="k">Вода${CITIES[S.city].sea?` <small>(лето ${W.sstYear})</small>`:''}</div><div class="v">${sst==null?'—':'+'+Math.round(sst)+'°'}</div></div>
+  </div>
+  ${tempChart(all.map(t=>({d:t,...(W.days[t]||{})})),w?[all.indexOf(w.start),all.indexOf(w.end)]:null)}
+  <div class="legend"><span><i class="dot" style="background:var(--ok)"></i>комфортно</span><span><i class="dot" style="background:var(--sun)"></i>жарко / прохладно / дожди</span><span><i class="dot" style="background:var(--warn)"></i>жара 33°+ или ливни</span><span><i class="dot" style="background:var(--soft)"></i>выбранное окно</span></div>
+  ${!CITIES[S.city].sea?'':sst==null?'<p class="note">Температура воды для этой точки недоступна.</p>':''}`;
+}
+function tempChart(days,win){
+  const Wd=640,H=230,pl=34,pr=10,pt=14,pb=28,n=days.length;
+  const vals=days.flatMap(d=>[d.tmax,d.tmin]).filter(v=>v!=null);if(!vals.length)return '';
+  let lo=Math.floor(Math.min(...vals)/5)*5,hi=Math.ceil(Math.max(...vals,30)/5)*5;if(hi===lo)hi+=5;
+  const step=n>1?(Wd-pl-pr)/(n-1):0,x=i=>n>1?pl+i*step:(Wd+pl-pr)/2,y=v=>pt+(hi-v)/(hi-lo)*(H-pt-pb);
+  let g='';for(let v=lo;v<=hi;v+=5)g+=`<line x1="${pl}" x2="${Wd-pr}" y1="${y(v)}" y2="${y(v)}" stroke="#E3F4F2"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#5E7C7A">${v}°</text>`;
+  if(win){const x0=x(win[0])-step/2,x1=x(win[1])+step/2;g+=`<rect x="${Math.max(pl,x0)}" y="${pt}" width="${Math.min(Wd-pr,x1)-Math.max(pl,x0)}" height="${H-pt-pb}" fill="#C8F0EC" opacity=".55" rx="6"/>`}
+  if(32>lo&&32<hi)g+=`<line x1="${pl}" x2="${Wd-pr}" y1="${y(32)}" y2="${y(32)}" stroke="#FF8A7A" stroke-dasharray="4 4"/><text x="${Wd-pr}" y="${y(32)-4}" text-anchor="end" font-size="11" fill="#B23B2C">жара 32°</text>`;
+  const pts=k=>days.map((d,i)=>d[k]!=null?`${x(i).toFixed(1)},${y(d[k]).toFixed(1)}`:null).filter(Boolean);
+  const top=pts('tmax'),bot=pts('tmin');
+  if(top.length>1&&bot.length>1)g+=`<polygon points="${top.join(' ')} ${bot.reverse().join(' ')}" fill="#40C9C0" opacity=".12"/>`;
+  g+=`<polyline points="${pts('tmin').join(' ')}" fill="none" stroke="#8FB7B4" stroke-width="2"/><polyline points="${top.join(' ')}" fill="none" stroke="#2BA59D" stroke-width="2.5"/>`;
+  const col={green:'#7ED9A6',yellow:'#FFD58A',red:'#FF8A7A'},r=n>60?2.6:n>30?3.2:4;
+  days.forEach((d,i)=>{const c=comfort(d);if(!c)return;g+=`<circle cx="${x(i)}" cy="${y(d.tmax)}" r="${r}" fill="${col[c.level]}" stroke="${d.kind==='f'?'#1F3D3B':'#fff'}" stroke-width="1"><title>${fmtD(d.d)}: днём +${Math.round(d.tmax)}°, ночью ${Math.round(d.tmin)}°, ${d.kind==='f'?'вероятность осадков':'дней с дождём'} ${Math.round(d.prob||0)}%</title></circle>`});
+  const every=n>45?14:n>20?7:n>10?3:1;
+  days.forEach((d,i)=>{if(i%every===0)g+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="#5E7C7A">${fmtDs(d.d)}</text>`});
+  return `<svg class="chart" viewBox="0 0 ${Wd} ${H}" role="img" aria-label="График дневной и ночной температуры с ${fmtD(days[0].d)} по ${fmtD(days[n-1].d)}">${g}</svg>`;
+}
+
+function holidayRu(h){for(const [re,ru,note] of HOLIDAY_RU)if(re.test(h.name)||re.test(h.localName))return {ru,note};return {ru:h.name,note:'возможны закрытые магазины и учреждения'}}
+function renderSeason(){
+  const b=$('#seasonBody');
+  if(S.seasonErr){b.innerHTML=errBox('праздниках и каникулах','season');return}
+  if(!S.season){b.innerHTML=skel(5);return}
+  const se=S.season,w=curWin(),dest=se.school[S.cc]||{};
+  let months=[];for(let m=+S.d1.slice(5,7);m<=+S.d2.slice(5,7);m++)months.push(m);
+  const y=+S.d1.slice(0,4);
+  const cal=months.map(m=>{const first=`${y}-${pad(m)}-01`,nd=new Date(Date.UTC(y,m,0)).getUTCDate();
+    let h=`<div><h4>${MONTHS_NOM[m-1]}</h4><div class="sg">${WD.map(x=>`<span class="wd">${x}</span>`).join('')}${'<span></span>'.repeat(dow(first))}`;
+    for(let d=1;d<=nd;d++){const t=`${y}-${pad(m)}-${pad(d)}`,inr=t>=S.d1&&t<=S.d2,hol=se.hol[t],sch=dest[t];
+      const tip=[hol&&hol.map(x=>holidayRu(x).ru).join(', '),sch&&`школьные каникулы (${Math.round(sch*100)}% регионов)`].filter(Boolean).join('; ');
+      h+=`<span class="sd${inr?' inr':''}${inr&&sch>=.5?' sch':''}${inr&&hol?' hol':''}${w&&t>=w.start&&t<=w.end?' win':''}"${tip?` title="${esc(fmtD(t)+': '+tip)}"`:''}>${d}</span>`}
+    return h+'</div></div>'}).join('');
+  // недели
+  const weeks=[];range(S.d1,S.d2).forEach(t=>{if(!weeks.length||dow(t)===0)weeks.push([]);weeks[weeks.length-1].push(t)});
+  const wk=weeks.map(ws=>{const v=avg(ws.map(crowdDay)),[cls,lbl]=crowdLevel(v);return `<span class="wk ${cls}">${fmtRange(ws[0],ws[ws.length-1])} · <b>${lbl}</b></span>`}).join('');
+  const hols=Object.keys(se.hol).sort();
+  const hl=hols.map(t=>se.hol[t].map(h=>{const r=holidayRu(h);return `<li><b>${fmtD(t)}</b> — ${esc(r.ru)} <span class="sub">(${esc(h.localName)})${h.global===false?', в отдельных регионах':''}</span><br><span class="sub">${esc(r.note[0].toUpperCase()+r.note.slice(1))}</span></li>`}).join('')).join('');
+  const span=c=>{const ps=se.periods[c],ss=ps.map(p=>p.s).sort(),es=ps.map(p=>p.e).sort();
+    return {first:ss[0],all:ss[ss.length-1],end:es[es.length-1]}};
+  const dps=se.periods[S.cc]?span(S.cc):null;
+  const dp=dps?`с ${fmtD(dps.first)}${dps.all!==dps.first?` (во всех регионах — с ${fmtD(dps.all)})`:''} до ${fmtD(dps.end)}${dps.end.slice(5)==='08-31'?' и дальше':''}${se.estimated[S.cc]?` — оценка по датам ${se.estimated[S.cc]} года`:''}`:'';
+  const nbInfo=se.neighbors.filter(c=>se.periods[c]).map(c=>`${countryFlag(c)} ${esc(countryName(c))} — с ${fmtD(span(c).first)}${se.estimated[c]?'*':''}`);
+  b.innerHTML=`<div class="scal">${cal}</div>
+  <div class="legend"><span><i class="dot" style="background:var(--sun)"></i>праздник</span><span><i class="dot" style="background:var(--soft)"></i>школьные каникулы</span><span><i class="dot" style="box-shadow:inset 0 0 0 2px var(--accent-h)"></i>выбранное окно</span></div>
+  <h3 style="margin-top:14px">Загруженность по неделям</h3><div class="weeks">${wk}</div>
+  <p class="note">Индекс считается по школьным каникулам в стране и у соседей, праздникам и выходным.${se.school[S.cc]?'':' Данных о школьных каникулах страны в OpenHolidays нет — учтены праздники и соседние страны.'}${staleNote(se.stale)}</p>
+  <h3 style="margin-top:14px">Праздники в выбранный период</h3>
+  ${hl?`<ul class="hlist">${hl}</ul>`:'<p class="note">Государственных праздников в эти даты нет — отлично!</p>'}
+  ${dp?`<p class="note"><b>Летние школьные каникулы:</b> ${dp}</p>`:''}
+  ${nbInfo.length?`<p class="note"><b>Каникулы у соседей:</b> ${nbInfo.join(' · ')}${se.neighbors.some(c=>se.estimated[c])?' (* — оценка по прошлому году)':''}</p>`:''}`;
+}
+
+async function renderFlights(run){
+  const b=$('#flightsBody'),w=curWin();
+  if(!w){b.innerHTML='<div class="info">Сначала выберите окно поездки.</div>';return}
+  const dep=addDays(w.start,S.flightShift),ret=addDays(w.end,S.flightShift);
+  const partner=`<div class="links"><a class="btn btn-primary btn-sm" href="${aviasalesLink(dep,ret)}" target="_blank" rel="noopener">Искать на Aviasales ↗</a><a class="btn btn-ghost btn-sm" href="${gflightsLink(dep,ret)}" target="_blank" rel="noopener">Google Flights ↗</a></div>`;
+  const route=`<p class="note" style="margin:0 0 10px">${S.from} → ${S.city} · туда ${fmtD(dep)}, обратно ${fmtD(ret)} · ${$('#v-pax').textContent}</p>`;
+  if(!CONFIG.FLIGHTS_PROXY_URL){
+    b.innerHTML=route+`<div class="info">Поиск рейсов со стыковками работает через партнёрский API продавца билетов, а его ключ можно хранить только на сервере. Пока прокси не подключён, откройте поиск на выбранные даты у партнёров — там можно отсортировать варианты по длительности пересадки.</div>${partner}`;return}
+  b.innerHTML=route+skel(4);
+  let f;try{f=await loadFlights(dep,ret)}catch(e){if(run!==undefined&&run!==S.run)return;b.innerHTML=route+errBox('рейсах','flights')+partner;return}
+  if(curWin()!==w)return;
+  if(!f.offers.length){b.innerHTML=route+`<div class="info">На эти даты рейсов не нашли — попробуйте сдвинуть даты на ±3 дня.</div><div class="links"><button type="button" class="btn btn-ghost btn-sm" data-shift="-3">← на 3 дня раньше</button><button type="button" class="btn btn-ghost btn-sm" data-shift="3">на 3 дня позже →</button></div>`;return}
+  let list=f.offers.filter(o=>(!S.fDirect||o.stops===0)&&(!S.fMax1||o.stops<=1)&&(!S.fMaxH||o.legs.every(l=>l.lay.every(x=>x.min<=S.fMaxH*60))));
+  list.sort(S.fSort==='price'?(a,c)=>a.rub-c.rub:S.fSort==='time'?(a,c)=>a.total-c.total:(a,c)=>a.wait-c.wait||a.rub-c.rub);
+  const tm=s=>s.slice(11,16);
+  b.innerHTML=route+`<div class="ftools">
+    <div class="seg" role="group" aria-label="Сортировка">${[['wait','Меньше ожидания'],['price','Дешевле'],['time','Быстрее']].map(([k,n])=>`<button type="button" data-fsort="${k}" aria-pressed="${S.fSort===k}">${n}</button>`).join('')}</div>
+    <label><input type="checkbox" data-ff="fDirect" ${S.fDirect?'checked':''}>только прямые</label>
+    <label><input type="checkbox" data-ff="fMax1" ${S.fMax1?'checked':''}>не более 1 пересадки</label>
+    <label>пересадка не более <select data-ff="fMaxH">${[0,2,3,4,6].map(h=>`<option value="${h}" ${S.fMaxH===h?'selected':''}>${h?h+' ч':'любая'}</option>`).join('')}</select></label></div>
+  ${S.flightShift?`<p class="note">Даты сдвинуты на ${S.flightShift>0?'+':''}${S.flightShift} дн.</p>`:''}
+  ${list.length?list.slice(0,12).map(o=>`<div class="offer"><div class="ohead"><div><div class="price">${fmtRub(o.rub)}</div><div class="note" style="margin:0">${esc(o.airlines.join(', '))} · в пути ${fmtMin(o.total)} · ожидание ${o.wait?fmtMin(o.wait):'нет'}</div></div>
+    <a class="btn btn-primary btn-sm" href="${esc(o.link||aviasalesLink(dep,ret))}" target="_blank" rel="noopener">Купить ↗</a></div>
+    ${o.legs.map((l,li)=>`<div class="leg"><div class="lt">${li?'Обратно':'Туда'} · ${fmtD(l.segs[0].dep.slice(0,10))} · ${fmtMin(l.dur)}</div><div class="route">
+      ${l.segs.map((s,si)=>`${si?'':`<span class="ap">${esc(s.from)}</span> ${tm(s.dep)} →`} <span class="ap">${esc(s.to)}</span> ${tm(s.arr)}${l.lay[si]?` <span class="lay${l.lay[si].risk?' risk':l.lay[si].long?' long':''}">${l.lay[si].risk?'⚠ рискованная пересадка ':l.lay[si].long?'долгое ожидание ':'ожидание '}${fmtMin(l.lay[si].min)}</span> ${tm(l.segs[si+1].dep)} →`:''}`).join(' ')}
+    </div></div>`).join('')}</div>`).join(''):'<div class="info">Под фильтры ничего не подходит — ослабьте их.</div>'}
+  <p class="note">Минимальное время пересадки: 60 мин в Шенгене, 90 мин в остальных аэропортах. Обновлено ${f.stale?Math.round(f.stale.age)+' мин назад':'только что'}.</p>${partner}`;
+}
+$('#flightsBody').addEventListener('click',e=>{
+  const s=e.target.closest('[data-fsort]');if(s){S.fSort=s.dataset.fsort;renderFlights()}
+  const sh=e.target.closest('[data-shift]');if(sh){S.flightShift+=+sh.dataset.shift;renderFlights()}});
+$('#flightsBody').addEventListener('change',e=>{const k=e.target.dataset.ff;if(!k)return;S[k]=e.target.type==='checkbox'?e.target.checked:+e.target.value;renderFlights()});
+
+function renderTransfer(){
+  const b=$('#transferBody'),c=CITIES[S.city],T=TRANSFERS[S.city];
+  if(!T){b.innerHTML=`<div class="info">Подробных данных о трансфере из аэропорта ${c.iata} пока нет. Актуальные варианты есть на официальном сайте аэропорта.</div><div class="links"><a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(c.iata+' airport official website transport to city')}">Найти сайт аэропорта ↗</a></div>`;return}
+  const t=S.arrTime||'12:00',[hh,mm]=t.split(':').map(Number),tmin=hh*60+mm,night=tmin<360||tmin>=1380;
+  const toMin=s=>{const[a,b2]=s.split(':').map(Number);return a*60+b2};
+  const openAt=(o,cl)=>{if(o==='24/7')return true;let a=toMin(o),z=toMin(cl);if(z<=a)z+=1440;return (tmin>=a&&tmin<=z)||(tmin+1440>=a&&tmin+1440<=z)};
+  const opts=T.o.map(o=>({o,open:openAt(o[6],o[7])}));
+  b.innerHTML=`<p class="note" style="margin:0 0 10px">Аэропорт ${c.iata} → центр города ${esc(c.name)}</p>
+  <div class="arr"><label for="arrT">Время прилёта:</label><input type="time" id="arrT" value="${t}">${night?'<span class="badge warn">ночной прилёт</span>':''}<span class="note" style="margin:0">подсветим то, что работает в это время</span></div>
+  ${opts.map(({o,open})=>`<div class="tr ${open?'open':'closed'}"><div class="ti" aria-hidden="true">${TR_ICON[o[0]]||'🚐'}</div><div>
+    <div class="tn">${esc(o[1])}${open?'':' <span class="badge">не работает в это время</span>'}</div>
+    <div class="tm"><span>⏱ ${o[2]} мин</span><span>💳 ${fmtEurRange(o[3],o[4])}${o[0]==='taxi'?' за машину':' за человека'}</span><span>🔁 ${esc(o[5])}</span><span>🕐 ${o[6]==='24/7'?'круглосуточно':`${o[6]}–${o[7]}`}</span></div></div></div>`).join('')}
+  <p class="note">Цены и расписание ориентировочные — перед поездкой проверьте на <a href="${T.site}" target="_blank" rel="noopener">официальном сайте аэропорта</a>.</p>`;
+}
+$('#transferBody').addEventListener('change',e=>{if(e.target.id==='arrT'){S.arrTime=e.target.value;renderTransfer();$('#arrT').focus()}});
+
+document.addEventListener('click',e=>{const r=e.target.closest('[data-retry]');if(!r)return;const k=r.dataset.retry,run=S.run;
+  if(k==='weather'||k==='all'){S.weatherErr=null;S.weather=null;renderWeather();loadWeather().then(d=>S.weather=d).catch(er=>S.weatherErr=er).then(()=>computeWindows(run))}
+  if(k==='season'||k==='all'){S.seasonErr=null;S.season=null;renderSeason();loadSeason().then(d=>S.season=d).catch(er=>S.seasonErr=er).then(()=>computeWindows(run))}
+  if(k==='flights')renderFlights(run)});
+
+/* ================= Запуск ================= */
+async function runSearch(){
+  if(!validate())return;
+  const run=++S.run;Object.assign(S,{weather:null,weatherErr:null,season:null,seasonErr:null,windows:[],sel:0,flights:{}});
+  $('#results').hidden=false;
+  $('#recBody').innerHTML=`<div class="rec-cards">${'<div class="card">'+skel(4)+'</div>'.repeat(1)}${('<div class="card">'+skel(4)+'</div>').repeat(2)}</div>`;
+  $('#wKind').innerHTML='';renderWeather();renderSeason();
+  $('#flightsBody').innerHTML=skel(4);$('#transferBody').innerHTML=skel(4);
+  requestAnimationFrame(()=>$('#rec').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+  if(!navigator.onLine){$('#offline').hidden=false}
+  const pW=loadWeather().then(d=>{if(run===S.run){S.weather=d;renderWeather()}}).catch(e=>{if(run===S.run){S.weatherErr=e;renderWeather()}});
+  const pS=loadSeason().then(d=>{if(run===S.run){S.season=d;renderSeason()}}).catch(e=>{if(run===S.run){S.seasonErr=e;renderSeason()}});
+  await Promise.all([pW,pS]);if(run!==S.run)return;
+  await computeWindows(run);
+}
+$('#tripForm').addEventListener('submit',e=>{e.preventDefault();runSearch()});
+
+function stateToParams(){return new URLSearchParams({from:S.from||'',cc:S.cc||'',city:S.city||'',d1:S.d1||'',d2:S.d2||'',len:S.len,ad:S.adults,ch:S.children,p:S.prio})}
+$('#share').addEventListener('click',async()=>{
+  const url=location.href.split(/[?#]/)[0]+'?'+stateToParams();history.replaceState(null,'','?'+stateToParams());
+  try{await navigator.clipboard.writeText(url);toast('Ссылка скопирована')}
+  catch(e){const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Ссылка скопирована')}catch(e2){toast('Скопируйте ссылку из адресной строки')}ta.remove()}});
+$('#reset').addEventListener('click',()=>{
+  Object.assign(S,{from:null,cc:null,city:null,d1:null,d2:null,len:7,adults:1,children:0,prio:'balance',windows:[],weather:null,season:null});S.run++;
+  selFrom.set(null);selCountry.set(null);fillCities();selLen.set(7);renderCalBtn();renderPax();
+  document.querySelector('input[name=prio][value=balance]').checked=true;$('#results').hidden=true;history.replaceState(null,'',location.pathname);validate();
+  window.scrollTo({top:0,behavior:'smooth'})});
+
+function applyUrl(){
+  const p=new URLSearchParams(location.search);if(!p.get('city'))return false;
+  const from=p.get('from'),cc=p.get('cc'),city=p.get('city'),d1=p.get('d1'),d2=p.get('d2');
+  if(DEPARTURES.some(d=>d[0]===from)){S.from=from;selFrom.set(from)}
+  if(DEST[cc]){S.cc=cc;selCountry.set(cc);if(DEST[cc].some(c=>c[0]===city))S.city=city;fillCities()}
+  if(d1&&d2&&dateAllowed(d1)&&dateAllowed(d2)&&d1<=d2&&d1.slice(0,4)===d2.slice(0,4)){S.d1=d1;S.d2=d2;renderCalBtn()}
+  const len=+p.get('len');if(len>=3&&len<=21){S.len=len;selLen.set(len)}
+  const ad=+p.get('ad'),ch=+p.get('ch');if(ad>=1&&ad<=9)S.adults=ad;if(ch>=0&&ch<=8)S.children=ch;renderPax();
+  const pr=p.get('p');if(WEIGHTS[pr]){S.prio=pr;document.querySelector(`input[name=prio][value=${pr}]`).checked=true}
+  return validate();
+}
+
+addEventListener('offline',()=>$('#offline').hidden=false);
+addEventListener('online',()=>$('#offline').hidden=true);
+if(!navigator.onLine)$('#offline').hidden=false;
+
+loadRate();
+const countriesReady=loadCountries();
+validate();
+if(applyUrl())runSearch();
+</script>
+</body>
+</html>
